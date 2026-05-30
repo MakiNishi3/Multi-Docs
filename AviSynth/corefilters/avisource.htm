@@ -1,0 +1,231 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <title>AVISource / OpenDMLSource / AVIFileSource / WAVSource Avisynth Filter</title>
+   <link rel="stylesheet" type="text/css" href="../../avisynth.css">
+</head>
+<body>
+<h2>&nbsp;&nbsp;&nbsp; <a name="AVISource"></a>AVISource / OpenDMLSource / AVIFileSource / WAVSource</h2>
+<p><code>AVISource </code>(<var>string filename [, ...], bool &quot;audio&quot;=true,
+        string &quot;pixel_type&quot;=&quot;FULL&quot;, string &quot;fourCC&quot;,
+        int &quot;vtrack&quot; = 0, int &quot;atrack&quot; = 0</var>)<br>
+  <code>OpenDMLSource </code>(<var>string filename [, ...], bool &quot;audio&quot;=true,
+        string &quot;pixel_type&quot;=&quot;FULL&quot;, string &quot;fourCC&quot;,
+        int &quot;vtrack&quot; = 0, int &quot;atrack&quot; = 0</var>)<br>
+  <code>AVIFileSource </code>(<var>string filename [, ...], bool &quot;audio&quot;=true,
+        string &quot;pixel_type&quot;=&quot;FULL&quot;, string &quot;fourCC&quot;,
+        int &quot;vtrack&quot; = 0, int &quot;atrack&quot; = 0</var>)<br>
+  <code>WAVSource </code>(<var>string filename [, ...]</var>)
+</p>
+<p><code>AVISource</code>  takes as argument one or more file name in quotes,
+and reads in the file(s) using either the Video-for-Windows &quot;AVIFile&quot; interface,
+or AviSynth's built-in OpenDML code (taken from VirtualDub). This filter
+can read any file for which there's an AVIFile handler. This includes not
+only AVI files but also WAV files, AVS (AviSynth script) files, and VDR
+(VirtualDub frameserver) files. If you give multiple filenames as arguments,
+the clips will be spliced together with <code><a href="splice.htm">UnalignedSplice</a></code>.
+</p>
+<p>The <code>AVISource</code> filter examines the file to determine its type
+and passes it to either the AVIFile handler or the OpenDML handler as appropriate.
+In case you have trouble with one or the other handler, you can also use
+the <code>OpenDMLSource</code> and <code>AVIFileSource</code> filters, which force
+the use of one or the other handler. Either handler can read ordinary (&lt;
+2GB) AVI files, but only the OpenDML handler can read larger AVI files,
+and only the AVIFile handler can read other file types like WAV, VDR and
+AVS. There is built-in support for ACM (Audio Compression Manager) audio (e.g. mp3-AVIs).
+</p>
+<p><code>WAVSource</code> can be used to open a WAV file, or the audio stream
+from an AVI file. This can be used, for example, if your video stream is
+damaged or its compression method is not supported on your system.</p>
+
+<h3>Parameters</h3>
+All parameters are optional.
+<dl>
+  <p>
+    <dl>
+      <dt>
+<var>audio</var> (default true)</dt><dd>When set to true it will load the
+audio stream (as specified by the atrack parameter) if present. When set to
+false, it will not load any audio streams.
+      </dd>
+    </dl>
+  </p>
+  <p>
+    <dl>
+      <dt>
+<var>pixel_type</var></dt><dd>Chooses the output color format
+of the decompressor. Valid values are "YV24", "YV16", "YV12", "YV411", "YUY2",
+"RGB32", "RGB24", "Y8", "AUTO" and "FULL" (default value).<p>If omitted or set
+to "FULL", AviSynth will use the first format supported by the decompressor
+(in the following order: YV24, YV16, YV12, YV411, YUY2, RGB32, RGB24 and Y8).
+If set to "AUTO", AviSynth will use the old ordering: YV12, YUY2, RGB32, RGB24
+and Y8.
+</p>
+<p>
+To put it in
+different words: if you don't specify something it will try to output the AVI
+as YV24, if that isn't possible it tries YV16 and if that isn't possible it
+tries YV12, etc ...
+</p>
+<p>
+This parameter has no effect if the video is in an uncompressed
+format, because no decompressor will be used in that case.
+</p>
+<p>Adding a '+' to the start of the <var>pixel_type</var> for planar formats
+assumes the lines are padded DWORD aligned in memory instead of packed. This
+can correct skew or tearing of the decoded video. E.g <code>AviSource("...",
+pixel_type="+YV12")</code>
+This problem shows up with bad codecs when the width of the picture is not divisible by 4.
+</p>
+      </dd>
+    </dl>
+  </p>
+  <p>
+    <dl>
+      <dt>
+<var>fourCC</var></dt><dd>Forces use of a different codec than the default
+taken from the FourCC of the video stream.
+      </dd>
+    </dl>
+  </p>
+  <p>
+    <dl>
+      <dt>
+<var>vtrack</var> (default 0)</dt><dd>When vtrack is specified it will load the
+vtrack videostream (where we start counting at zero). When the videostream is
+not found, an error will be returned.
+      </dd>
+    </dl>
+  </p>
+  <p>
+    <dl>
+      <dt>
+<var>atrack</var> (default 0)</dt><dd>When atrack is specified it will load the
+atrack audiostream (where we start counting at zero). When the audiostream is
+not found, no audio will be loaded.
+      </dd>
+    </dl>
+  </p>
+</dl>
+<h3>Helpful hints</h3>
+<ul>
+<li>
+<p>
+There is a limit of (about 50) AVISource calls in script.
+See <a href="http://forum.doom9.org/showthread.php?t=131687">discussion</a>.
+</p>
+</li>
+<li>
+<p>Sometimes the colors will be distorted when loading a DivX clip in AviSynth
+v2.5 (the chroma channels U and V are swapped), due to a bug in DivX (5.02
+and older). You can use <a href="swap.htm"><code>SwapUV</code></a> to correct it.
+</p>
+</li>
+<li>
+<p>From <em>v2.53</em> <code>AVISource</code> can also open DV type 1 video
+input (only video, not audio).
+</p>
+</li>
+<li>
+<p>Some MJPEG/DV codecs do not give correct CCIR 601 compliant output when
+using <code>AVISource</code>. The problem could arise if the input and output
+color format of the codec are different. For example if the input color format is
+YUY2, while the output color format is RGB, or vice versa. There are two ways to
+resolve it:
+</p>
+<p>1. Force the same output as the input color format. Thus for example
+(if the input is RGB):
+<pre>AVISource(&quot;file.avi&quot;, pixel_type=&quot;RGB32&quot;)</pre>
+</p>
+<p>2. Correct it with the filter <a href="coloryuv.htm">ColorYUV</a>:
+<pre>AVISource(&quot;file.avi&quot;).ColorYUV(levels=&quot;PC-&gt;TV&quot;)</pre>
+</p>
+</li>
+</ul>
+
+<h3>More on codecs</h3>
+<p>Some reference threads:
+</p>
+<ul>
+<li>
+  <cite><a href="http://forum.doom9.org/showthread.php?s=&amp;postid=330657">MJPEG
+codecs</a></cite>
+</li>
+<li>
+  <cite><a href="http://forum.doom9.org/showthread.php?s=&amp;threadid=58110">DV
+codecs</a></cite>
+</li>
+</ul>
+<h3>Examples</h3>
+<pre># C programmers note: backslashes are not doubled;
+# forward slashes work too
+AVISource(&quot;d:\capture.avi&quot;)
+AVISource(&quot;c:/capture/00.avi&quot;)
+WAVSource(&quot;f:\soundtrack.wav&quot;)
+WAVSource(&quot;f:/soundtrack.wav&quot;)
+</pre>
+<pre>
+# The following is the same as
+# AVISource(&quot;cap1.avi&quot;) + AVISource(&quot;cap2.avi&quot;):
+AVISource(&quot;cap1.avi&quot;, &quot;cap2.avi&quot;)
+</pre>
+<pre>
+# disables audio and request RGB32 decompression
+AVISource(&quot;cap.avi&quot;, false, &quot;RGB32&quot;)
+</pre>
+<pre>
+# opens a DV using the Canopus DV Codec
+AviSource(&quot;cap.avi&quot;, false, fourCC=&quot;CDVC&quot;)
+</pre>
+<pre>
+# opens an avi (for example DivX3) using the XviD Codec
+AviSource(&quot;cap.avi&quot;, false, fourCC=&quot;XVID&quot;)
+</pre>
+<pre>
+# splicing two clips where one of them contains no audio.
+# when splicing the clips must be compatible (have the
+# same video and audio properties):
+A = AviSource(&quot;FileA.avi&quot;)
+B = AviSource(&quot;FileB.avi&quot;) # No audio stream
+A ++ AudioDub(B, BlankClip(A))</pre>
+<pre>
+# Force open for YV12 decode with a bad codec where the
+# width is not a multiple of four
+AVISource(&quot;D:\Projects\test.avi&quot;, pixel_type=&quot;+YV12&quot;)
+</pre>
+<pre>
+# opens the 2nd video and 2nd audio stream of a clip
+AVISource(&quot;D:\Projects\multi10.avi&quot;, vtrack=1, atrack=1)
+</pre>
+<h3>Windows7 users</h3>
+WavSource under Windows 7 is unable to load WAV files with 32-bit IEEE Float
+samples having the <a href="http://forum.doom9.org/showthread.php?t=170444">WAVEFORMAT structure</a>.
+Guess they screwed something up in AVIFileSource. You can use ffmpeg to rewrite
+the header to an extensible format (just do a stream copy, -a:copy, it always
+writes extensible headers).
+
+<h3><b>Changes</b></h3>
+<table border="1">
+  <tbody>
+    <tr>
+      <td rowspan=3>v2.60</td>
+      <td>Added new color formats, &quot;YV24&quot;, &quot;YV16&quot;, &quot;YV411&quot;,
+	      &quot;Y8&quot; &quot;AUTO&quot; and &quot;FULL&quot;.</td>
+    </tr>
+    <tr>
+      <td>Add '+' to pixel_type for padded planar support.</td>
+    </tr>
+    <tr>
+      <td>Added multiple video and audio stream support.</td>
+    </tr>
+    <tr>
+      <td>v2.55</td>
+      <td>Added fourCC option.</td>
+    </tr>
+  </tbody>
+</table>
+<p><kbd>$Date: 2015/01/12 01:20:42 $</kbd></p>
+<form><input value="Back" onclick="history.go(-1)" type="button"></form>
+</body>
+</html>

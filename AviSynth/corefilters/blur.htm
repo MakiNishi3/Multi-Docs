@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Blur / Sharpen Avisynth Filter</title>
+<link rel="stylesheet" type="text/css" href="../../avisynth.css">
+</head>
+<body>
+<h2><a name="Blur"></a>Blur / Sharpen</h2>
+<p><code>Blur </code>(<var>clip, float amount</var>)<br>
+  <code>Blur </code>(<var>clip, float amountH, float amountV, bool MMX</var>)<br>
+  <code>Sharpen </code>(<var>clip, float amount</var>)<br>
+  <code>Sharpen </code>(<var>clip, float amountH, float amountV, bool MMX</var>)</p>
+<p>This is a simple 3x3-kernel blurring filter
+  using the kernel [(1&#8722;1/2^amount)/2, 1/2^amount, (1&#8722;1/2^amount)/2].
+  The largest allowable argument for
+  <code>Blur</code> is log2(3) (which is about 1.58), which corresponds to a (1/3,1/3,1/3) kernel.
+  A value of 1.0 gets you a (1/4,1/2,1/4) kernel. If you want a large-radius
+  Gaussian blur, I recommend chaining several copies of <code> Blur</code>(1.0)
+  together. (Anybody remember Pascal's triangle?)&nbsp;<br>
+  <br>
+  Negative arguments to <code>Blur</code> actually sharpen the image, and in fact
+  <code>Sharpen</code>(n) is just an alias for <code> Blur</code>(-n). The smallest
+  allowable argument to <code> Blur</code> is -1.0 and the largest to
+  <code>Sharpen</code> is 1.0.&nbsp;<br>
+  <br>
+  You can use 2 arguments to set independent Vertical and Horizontal amounts.
+  Like this, you can use <code> Blur</code>(0,1) to filter only Vertically,
+  for example to blend interlaced lines together. By default
+  <i>amountV</i>=<i>amountH</i>.
+</p>
+<p><b>Changes</b>
+</p>
+<table border="1" cellpadding="4" cellspacing="1">
+<tbody>
+<tr>
+  <td>v2.58</td>
+  <td>MMX routines fixed (have full 8 bit precision now); mmx=true by default</td>
+</tr>
+<tr>
+  <td>v2.57</td>
+  <td>added MMX option</td>
+</tr>
+</tbody>
+</table>
+<kbd>$Date: 2015/01/12 01:20:42 $</kbd>
+<form>
+  <input value="Back" onclick="history.go(-1)" type="button">
+</form>
+</body>
+</html>
