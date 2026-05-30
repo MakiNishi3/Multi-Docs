@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 4.01//EN">
+<HTML>
+<HEAD>
+<link rel="stylesheet" title="Default" href="style.css">
+<Title>View Menu Commands</Title>
+</HEAD>
+<BODY>
+
+<H3>View Menu Commands</H3>
+
+<P>View commands allow you to zoom in and out
+of the project.  Use these commands to see a more detailed
+view of individual sections or a better view of the overall project.  To quickly
+zoom in and out, use Ctrl+Up and Ctrl+Down arrow keys or the mouse wheel.</P>
+
+<P><B>All</B><br>
+Displays the entire project.</P>
+
+<P><B>Zoom In</B> and <B>Zoom Out</B><br>
+Zoom In expands the time line showing more detail.  Zoom Out
+compresses the time line showing less detail, but more of
+the overall project.  Zooming is centered on the edit marker's
+current position.  <a href="EditMoveMarker.html">Move</a> the marker to the area of interest
+before zooming.</P>
+
+<P><B>1 Second</B><br>
+Displays one second of the project.  At this level, you can
+easily see small sections and perform accurate editing.</P>
+
+<P><B>10 Seconds</B><br>
+Displays ten seconds of the project.  This level is useful
+for manipulating small sections.</P>
+
+<P><B>1 Minute</B><br>
+Displays one minute of the project.  This level give you a
+good overview of short projects.</P>
+
+<P><B>5 Minutes</B><br>
+Displays five minute of the project.  This level is good for music and songs.</P>
+
+<P><B>1 Hour</B><br>
+Displays 1 hour of the project, which is useful for CD audio projects.</P>
+
+<P><B><a name="TrackHeight">Track Height</a></B><br>
+Displays a submenu for setting the track height.</P>
+
+<P><B><a name="SectionDetail">Section Detail</a></B><br>
+Sets the level of detail shown in sections.
+<ul>
+	<li><b>None</b>: Displays no file content in sections.
+	On slow systems this setting significantly reduces processing,  speeding up the overall user interface.
+	<li><b>Low</b>: Displays single frame only (thumbnail).
+	Reduces the amount of processing required to display video and image sections by displaying
+	only the first frame within the section.
+	<li><b>High</b>: Displays multiple frames (storyboard).
+	Requires significant processing to open, seek, and
+	display video frames throughout video sections.
+	Not recommended when using the <b>Follow Playback</b> option below.
+</ul>
+
+
+<P><B>Beginning Of Section</B> and <B>End Of Section</B><br>
+Moves the view to the beginning or end of the selected
+sections.  Use these commands to quickly see the previous
+or next section when zoomed in.</P>
+
+<P><B>End Of Track</B><br>
+Moves the view to the end of the selected track.</P>
+
+<P><B>Marker</B><br>
+Moves the view to the edit marker if you are zoomed in and the marker is outside the view.</P>
+
+<P><B><a name="FollowPlayback">Follow Playback</a></B><br>
+When playing the project and zoomed in, the time line scrolls to keep the playback marker in the center of the window.
+Following playback requires significant processing for large projects.  Set <b>Section Detail</b> above to <b>Low</b> or less
+to reduce the processing required.
+
+<P><a href="ViewGrid.html">Grid</a><br>
+Sets the grid spacing and related settings.</P>
+
+<P><B><a name="Snap">Snap To Grid</a></B><br>
+Displays a grid and snaps the marker to the grid.  When dragging a
+section, the starting point of the section is snapped to a grid
+line.  The grid is visible only if the space between each line
+can be shown, otherwise you will need to zoom in to see the grid.</P>
+
+</BODY>
+</HTML>

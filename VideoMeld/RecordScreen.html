@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 4.01//EN">
+<HTML>
+<HEAD>
+<link rel="stylesheet" title="Default" href="style.css">
+<Title>Screen Recorder</Title>
+<style type="text/css">
+p.lines { margin-top:20px;font-weight:bold;padding-left:5px;border-top:solid 1px black;border-bottom:solid 1px black; }
+</style>
+</HEAD>
+<BODY>
+
+<H3>Screen Recorder</H3>
+
+<p class="location">Menu Command: <b>Record | Screen Recorder</b></p>
+
+<p>Screen Recorder captures the computer's screen to a video file, which can then be added to a project for editing
+and effects.
+
+<p>Initially a preview of the entire screen is shown where you can crop the area or select a window to record.  Use the Output File
+settings to set the resolution of the preview and file.
+
+<p class="lines">Video Settings
+<p>Use <b>Capture Area</b> to set the region of the screen to record.  Either select a window from the drop down list or set
+the left, top, width, and height manually.
+
+<p>Use <b>Output File</b> to set the resolution of the recorded file (and the preview) and the bitrate for the
+video encoding quality of the file.  The captured screen will be scaled down or letterboxed as necessary to fit
+the resolution.  The best bitrate value depends on the
+complexity of the screen being captured and the resolution selected.  Values around 7,000 or higher usually give
+good quality for average full screen resolutions.  Use higher values for better quality or highly detailed
+or heavily animated screen recordings.  User lower values to make the video file smaller for simple screens
+or when recording small areas of the screen.
+
+<p>Use the <b>Resize Capture Area To Fit Resolution</b> button to resize the capture area window to fit exactly within the
+selected resolution, giving ideal screen size and quality. This button should be used <i>only</i> on a main window of the program you are trying to record.  Using it on other windows may cause significant problems.  "Display" capture areas cannot be resized, so either the image will have to be scaled down to fit in the resolution or black borders are added around the video.
+
+<p class="lines">Audio Settings
+<p>Use <b>Audio input</b> to select the input for recording.  To record the computer's speaker or headphone output, choose the
+appropriate "LOOPBACK" input.  Otherwise choose the input you want to record for the video.  Or select "No audio" and
+use VideoMeld to add audio tracks and voice-overs to the video later.
+
+<p>Use <b>Output quality</b> to set the audio encoding bitrate for the video file.  128kbps gives good quality.  Lower values
+may make the file smaller at reduced quality.  Higher values give better quality, but make the file larger.
+
+<p>Use <b>Volume</b> to adjust the recording volume level.
+
+<p>A level meter is shown during recording.  Adjust the volume so that the meter peaks in the orange region.
+
+<p class="lines">Overlays & Effects
+<p>Use <b>Mouse picture-in-picture</b> to display a zoomed, full resolution window within the screen capture.  Use this
+when the output resolution is lower than the Capture Area resolution to see full detail surrounding the mouse.
+
+<p>Use <b>Mouse magnifying glass</b> to place a magnifying effect directly on the mouse pointer, making it easier
+to see where the mouse is and what it is point to.  Settings are provided for the colour of the glass, size,
+and magnification (zoom).
+
+<p>Use <b>Mouse click animation</b> to show an expanding ring animation when the mouse button is clicked.  Setting for
+the colour and maximum size of the ring are provided.
+
+<p class="lines">Filename Settings
+<p>Recordings are named using the <b>Base filename</b>, the current date and time (if <b>Automatic file naming</b>
+is checked), and the file type for the name.  Click on the <b>Base filename</b> edit box to change the base filename
+and folder where the file is saved.
+
+<p>If <b>Add to project after recording</b> is checked, then the video file is added to the current track in VideoMeld when
+a recording stops.
+
+<p>Choose the <b>Record/Stop</b> button to start and stop recording.
+
+<p>Changeable hot keys are provided for overlays and recording control.
+
+<p>Use <b>Hide VideoMeld when recording</b> to hide the Screen Recorder window and the main VideoMeld window while
+recording.  <b>Warning! The only way to stop recording is to use the hot key</b>, so test the hot key first (it may
+be in use by another program) before using this setting.
+
+
+<p class="lines">Recommendations:
+<p><ul>
+<li>When recording the entire screen, select a plain, black background for Windows to improve encoding speed.
+<li>When capturing a specific window, set the size of the window being captured to the exact same size as the
+selected <b>Resolution</b> setting.  For example, if the Resolution is 540p, then resize the window to 960x540
+if possible.
+<li>For best quality the width and height of the Capture Area must equal the width and height of the selected resolution.
+<li>Always use widths and heights that are multiples of 16.
+</ul>
+
+</BODY>
+</HTML>

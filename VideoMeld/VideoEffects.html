@@ -1,0 +1,2213 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 4.01//EN">
+<HTML>
+<HEAD>
+<link rel="stylesheet" title="Default" href="style.css">
+<Title>Video Effects</Title>
+</HEAD>
+<BODY>
+
+<H3>Video Effects</H3>
+
+<p class="location">Menu Command: <b>Effect | Add Or Modify</b> (with one video, image, caption, or overlay section selected)</p>
+
+<p>VideoMeld contains many video effects.  Effects may be added using the
+<a href="EffectEditorVideo.html">Video Effects Editor</a> or by dragging and
+dropping effects from the <a href="EffectBar.html">Effect Bar</a> to the section.
+
+<p>The function and settings of the effects (sorted alphabetically) are explained below.  See
+<a href="EffectEditorVideo.html">Video Effects Editor</a> for general information about changing effects settings.
+
+<p>Image coordinates are in the range of -0.5 to +0.5 with (0.0, 0.0) being the center of the image.
+This range gives an width and height of 1.0.
+
+
+<!--_________________________________________________________________________________________________-->
+<hr>
+<h4><a name="AspectRatioCorrection">Aspect Ratio Correction</a></h4>
+<p>Changes the aspect ratio of the original image to match the aspect ratio of the
+<a href="OptionsProject.html">project</a> screen.  This prevents images from looking wide and fat or narrow and skinny.
+The effect assumes that pixels are square.  If the image contains non-square pixels, adjust the ratio as required.
+
+<p>
+<table style="margin-left:20px;font-size:10pt" border="1" cellpadding=5 cellspacing=0 width="75%">
+<tr>
+	<th style="width:10em">
+		Setting
+	</th>
+	<th>
+		Function
+	</th>
+</tr>
+
+<tr>
+	<td>
+		Ratio
+	</td>
+	<td>
+		Adjusts the ratio.  A value greater than 1.0 makes the image wider.  A value less than 1.0 makes the image
+		taller.  Normally 1.0 is the correct ratio to use.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Border
+	</td>
+	<td>
+		Sets set lettering boxing or pillar mode to fill the unused areas that remain after the aspect
+		ratio is adjusted.  <b>Transparent</b> makes the areas transparent so that any background video will be
+		visible in those areas. <b>Black</b> fills the areas with black, similar to the way movies are
+		done for television.  Select <b>Black</b> when using transitions.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Resolution
+	</td>
+	<td>
+		When the aspect ratio is adjusted, the image may have to be scaled.  By default the image is scaled
+		down to the resolution of the final, <b>rendered</b> video.  This resolution is determined by either
+		the <a href="OptionsPlayback.html">playback</a> resolution or the resolution you select when melding
+		to a file.  If <b>Original</b> is selected, the resolution of the original image is used.
+		This setting should be used when cropping or zooming is required.  Otherwise using the rendered resolution
+		gives a more pixelated image.  Using <b>Original</b> with high resolution photographs <b>significantly</b>
+		slows down processing and preview playback.
+	</td>
+</tr>
+
+</table>
+
+
+<!--_________________________________________________________________________________________________-->
+<hr>
+<h4><a name="Bands"></a>Bands</h4>
+<p>Adds vertical bands to the image.
+
+<p>
+<table style="margin-left:20px;font-size:10pt" border="1" cellpadding=5 cellspacing=0 width="75%">
+<tr>
+	<th style="width:10em">
+		Setting
+	</th>
+	<th>
+		Function
+	</th>
+</tr>
+
+<tr>
+	<td>
+		Intensity
+	</td>
+	<td>
+		Sets the brightness of the bands.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Density
+	</td>
+	<td>
+		Sets the number of bands to draw.
+	</td>
+</tr>
+
+</table>
+
+
+<!--_________________________________________________________________________________________________-->
+<hr>
+<h4><a name="BoxBlur">Box Blur</a></h4>
+<p>Blurs the image using the <a href="http://en.wikipedia.org/wiki/Box_blur">box blur method</a>.
+
+<p>
+<table style="margin-left:20px;font-size:10pt" border="1" cellpadding=5 cellspacing=0 width="75%">
+<tr>
+	<th style="width:10em">
+		Setting
+	</th>
+	<th>
+		Function
+	</th>
+</tr>
+
+<tr>
+	<td>
+		Blur
+	</td>
+	<td>
+		Sets the level of blurring.
+	</td>
+</tr>
+
+</table>
+
+<p>See Also:
+<br><a href="#DirectionalBlur">Directional Blur</a>
+<br><a href="#GaussianBlur">Gaussian Blur</a>
+<br><a href="#RadialBlur">Radial Blur</a>
+<br><a href="#StackedBlur">Stacked Blur</a>
+<br><a href="#MotionBlur">Motion Blur</a>
+
+
+<!--_________________________________________________________________________________________________-->
+<hr>
+<h4><a name="BrightnessContrast">Brightness/Contrast</a></h4>
+<p>Changes the brightness and contrast of the image.
+
+<p>
+<table style="margin-left:20px;font-size:10pt" border="1" cellpadding=5 cellspacing=0 width="75%">
+<tr>
+	<th style="width:10em">
+		Setting
+	</th>
+	<th>
+		Function
+	</th>
+</tr>
+
+<tr>
+	<td>
+		Brightness
+	</td>
+	<td>
+		Scales the brightness.  A value of 1.0 is unchanged.  Values below 1.0 decrease the brightness.
+		Values above 1.0 increase the brightness.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Contrast
+	</td>
+	<td>
+		Scales the contrast.  A value of 1.0 is unchanged.  Values below 1.0 decrease the contrast.
+		Values above 1.0 increase the contrast.
+	</td>
+</tr>
+</table>
+
+<p>See Also:
+<br><a href="#Gamma">Gamma</a>
+<br><a href="#ColourLevels">Colour Levels</a>
+
+
+<!--_________________________________________________________________________________________________-->
+<hr>
+<h4><a name="Bounds">Bounds</a></h4>
+<p>Sets the size and position of the image within the screen using left, top, right, and bottom values.
+
+<p>
+<table style="margin-left:20px;font-size:10pt" border="1" cellpadding=5 cellspacing=0 width="75%">
+<tr>
+	<th style="width:10em">
+		Setting
+	</th>
+	<th>
+		Function
+	</th>
+</tr>
+
+<tr>
+	<td>
+		Area
+	</td>
+	<td>
+		When selected the area appears on the preview screen as a rectangle.  Click-and-drag the corner points
+		to adjust the size.  Click-and-drag inside the rectangle to move the whole rectangle.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Left
+	</td>
+	<td>
+		Sets the position of the left side.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Top
+	</td>
+	<td>
+		Sets the position of the top edge.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Right
+	</td>
+	<td>
+		Sets the position of the right side.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Bottom		
+	</td>
+	<td>
+		Sets the position of the bottom edge.
+	</td>
+</tr>
+
+</table>
+
+
+<!--_________________________________________________________________________________________________-->
+<hr>
+<h4><a name="ColourLevels">Colour Levels</a></h4>
+<p>Changes the amount of red, green, and blue in the image.
+
+<p>
+<table style="margin-left:20px;font-size:10pt" border="1" cellpadding=5 cellspacing=0 width="75%">
+<tr>
+	<th style="width:10em">
+		Setting
+	</th>
+	<th>
+		Function
+	</th>
+</tr>
+
+<tr>
+	<td>
+		Red
+	</td>
+	<td>
+		Scales the red level.  A value of 100 is unchanged.  Values below 100 decrease the red.
+		Values above 100 increase the red.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Green
+	</td>
+	<td>
+		Scales the green level.  A value of 100 is unchanged.  Values below 100 decrease the green.
+		Values above 100 increase the green.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Blue
+	</td>
+	<td>
+		Scales the blue level.  A value of 100 is unchanged.  Values below 100 decrease the blue.
+		Values above 100 increase the blue.
+	</td>
+</tr>
+
+</table>
+
+<p>See Also:
+<br><a href="#Tint">Tint</a>
+
+<!--_________________________________________________________________________________________________-->
+<hr>
+<h4><a name="ColourFilter">Colour Filter</a></h4>
+<p>Finds all colours with a range of hues and processes them based on the settings.  Use this effect to replace
+one colour with another, fade certain colours, make a range of hues transparent (green screen/chroma key), or keep
+only a narrow range of colours.
+
+<p>
+<table style="margin-left:20px;font-size:10pt" border="1" cellpadding=5 cellspacing=0 width="75%">
+<tr>
+	<th style="width:10em">
+		Setting
+	</th>
+	<th>
+		Function
+	</th>
+</tr>
+
+<tr>
+	<td>
+		Hue From
+	</td>
+	<td>
+		The start of the range of hues to process.  Hues are a continuous cycle from 0.0 to 1.0 so this value may be
+		larger than the <b>Hue To</b> value.  The range wraps back to zero and up to <b>Hue To</b>.
+
+		Click on the preview window to pick a colour from the image. Click-and-drag on the
+		preview window to get the average colour of all the pixels touched. Select a colour
+		from the popup that appears. 
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Hue To
+	</td>
+	<td>
+		The end of the range of hues to process.
+
+		Click on the preview window to pick a colour from the image. Click-and-drag on the
+		preview window to get the average colour of all the pixels touched. Select a colour
+		from the popup that appears. 
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Process
+	</td>
+	<td>
+		Sets the kind of processing done on hues within the range.
+		<ul>
+		<li>Monochrome: Removes the hue, leaving monochrome.<br>
+		<li>HLS: Replaces the hue, saturation, and luminosity with the settings below.<br>
+		<li>LS: Retains the current hue, but replaces the saturation and luminosity with the settings below.<br>
+		<li>Transparent: The range becomes transparent.
+		</ul>
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Hue
+	</td>
+	<td>
+		Sets the replacement hue if <b>Process</b> is set to <b>HLS</b>.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Saturation
+	</td>
+	<td>
+		Sets the saturation (amount of colour) if <b>Process</b> is set to <b>HLS</b> or <b>LS</b>.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Luminosity
+	</td>
+	<td>
+		Sets the luminosity (brightness) if <b>Process</b> is set to <b>HLS</b> or <b>LS</b>.
+	</td>
+</tr>
+
+</table>
+
+<p>See Also:
+<br><a href="#TransparentColour">Transparent Colour</a>
+
+
+<!--_________________________________________________________________________________________________-->
+<hr>
+<h4><a name="ColourShift">Colour Shift</a></h4>
+<p>Shifts the red, green, and blue layers in the image.
+
+<p>
+<table style="margin-left:20px;font-size:10pt" border="1" cellpadding=5 cellspacing=0 width="75%">
+<tr>
+	<th style="width:10em">
+		Setting
+	</th>
+	<th>
+		Function
+	</th>
+</tr>
+
+<tr>
+	<td>
+		Red
+	</td>
+	<td>
+		Set the X and Y shift of the red colour layer.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Green
+	</td>
+	<td>
+		Set the X and Y shift of the green colour layer.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Blue
+	</td>
+	<td>
+		Set the X and Y shift of the blue colour layer.
+	</td>
+</tr>
+
+</table>
+
+<p>See Also:
+<br><a href="#Tint">Tint</a>
+<br><a href="#ScanlineShift">Scanline Shift</a>
+<br><a href="#ColourFilter">Colour Filter</a>
+
+<!--_________________________________________________________________________________________________-->
+<hr>
+<h4><a name="Copy">Copy</a></h4>
+<p>Copies the selected area to an internal clipboard.  Use <a href="#Paste">Paste</a> to paste copies of the image.
+
+<p>The clipboard exists only for the section the effect is in and only for a single frame.  The clipboard cannot be copied
+from one section and pasted into another section or track.  Use a <a href="Sublayer">sublayer</a> to pass an image
+from one section/track to another.
+
+<table style="margin-left:20px;font-size:10pt" border="1" cellpadding=5 cellspacing=0 width="75%">
+<tr>
+	<th style="width:10em">
+		Setting
+	</th>
+	<th>
+		Function
+	</th>
+</tr>
+
+<tr>
+	<td>
+		Area
+	</td>
+	<td>
+		Sets the area of the image to copy.
+		When selected the area appears on the preview screen as a rectangle.  Click-and-drag the corner points
+		to adjust the size.  Click-and-drag inside the rectangle to move the whole rectangle.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Left
+	</td>
+	<td>
+		Sets the position of the left side.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Top
+	</td>
+	<td>
+		Sets the position of the top edge.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Right
+	</td>
+	<td>
+		Sets the position of the right side.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Bottom
+	</td>
+	<td>
+		Sets the position of the bottom edge.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Layer
+	</td>
+	<td>
+		Sets the layer to copy.
+		<ul>
+		<li>Top Layer: The current image for this section, with effects applied.
+		<li>Back Layer: The background composited image from all rendered track up to this track.
+		<li>Original: The current image for this section, with no effects applied.
+		</ul>
+	</td>
+</tr>
+
+</table>
+
+<p>See Also:
+<br><a href="#Cut">Cut</a>
+<br><a href="#Paste">Paste</a>
+<br><a href="#Swap">Swap</a>
+
+<!--_________________________________________________________________________________________________-->
+<hr>
+<h4><a name="CropPanZoom">Crop/Pan/Zoom</a></h4>
+<p>Selects part of the image and trims the rest.  The selected part may be stretched to fill the whole screen (zoomed) or centered
+in the screen depending on the mode used.  If the area varies, then panning over the image occurs (Ken Burns effect).  Use
+the simpler <a href="#PanZoom">Pan/Zoom</a> effect when the image dimensions must remain proportional to the original.
+
+<p>When setting crop positions, temporarily uncheck the effect in the Effects list so that the original image
+is previewed.  Otherwise the cropped version of the image is previewed, making it more difficult to determine
+crop positions.
+
+<p>Use the settings presets to see examples of the types of effects possible.
+
+<p>
+<table style="margin-left:20px;font-size:10pt" border="1" cellpadding=5 cellspacing=0 width="75%">
+<tr>
+	<th style="width:10em">
+		Setting
+	</th>
+	<th>
+		Function
+	</th>
+</tr>
+
+<tr>
+	<td>
+		Area
+	</td>
+	<td>
+		The area appears on the preview screen as a rectangle.  Click-and-drag the corner points
+		to adjust the size.  Click-and-drag inside the rectangle to move the whole rectangle.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Left
+	</td>
+	<td>
+		Sets the left crop position.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Top
+	</td>
+	<td>
+		Sets the top crop position.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Right
+	</td>
+	<td>
+		Sets the right crop position.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Bottom		
+	</td>
+	<td>
+		Sets the bottom crop position.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Mode
+	</td>
+	<td>
+		Sets the mode used for cropping.
+		<ul>
+		<li>Stretched: The cropped image is stretched to fill the entire screen.
+		<li>Proportional: Stretches the image to fill the entire screen, but maintains the aspect ratio by
+		using letter boxing or pillars.
+		<li>Centered: The cropped image is centered in the screen at its original size.
+		</ul>
+	</td>
+</tr>
+
+</table>
+
+
+<!--_________________________________________________________________________________________________-->
+<hr>
+<h4><a name="Cut">Cut</a></h4>
+<p>Copies the selected area from the top layer to an internal clipboard and makes the area transparent.
+
+<p>
+<table style="margin-left:20px;font-size:10pt" border="1" cellpadding=5 cellspacing=0 width="75%">
+<tr>
+	<th style="width:10em">
+		Setting
+	</th>
+	<th>
+		Function
+	</th>
+</tr>
+
+<tr>
+	<td>
+		Area
+	</td>
+	<td>
+		Sets the area of the image to copy and make transparent.
+		When selected the area appears on the preview screen as a rectangle.  Click-and-drag the corner points
+		to adjust the size.  Click-and-drag inside the rectangle to move the whole rectangle.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Left
+	</td>
+	<td>
+		Sets the position of the left side.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Top
+	</td>
+	<td>
+		Sets the position of the top edge.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Right
+	</td>
+	<td>
+		Sets the position of the right side.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Bottom
+	</td>
+	<td>
+		Sets the position of the bottom edge.
+	</td>
+</tr>
+
+</table>
+
+<p>See Also:
+<br><a href="#Copy">Copy</a>
+<br><a href="#Paste">Paste</a>
+<br><a href="#Swap">Swap</a>
+
+
+<!--_________________________________________________________________________________________________-->
+<hr>
+<h4><a name="Difference">Difference</a></h4>
+<p>Compares the image to the selected layer and makes similar pixels transparent, essentially leaving a cut-out
+of the difference.  This allows layers to be composited without the use of a green screen, provided the background is
+constant.
+
+<p>Twin example: Record a video of a room using a camera in a fixed position.  Add that video to track 1.  Add
+a <a href="#Sublayer">Sublayer</a> effect to put that video in the sublayer.
+Record another video with you walking left to right.  Add that video to track 2.  Add the Difference effect and
+select the Sublayer layer.  Record a third video of you walking right to left.  Add that video to track 3.
+Add the Difference effect and select the Sublayer layer.  The final video should show you walking in both
+directions.
+
+<p>
+<table style="margin-left:20px;font-size:10pt" border="1" cellpadding=5 cellspacing=0 width="75%">
+<tr>
+	<th style="width:10em">
+		Setting
+	</th>
+	<th>
+		Function
+	</th>
+</tr>
+
+<tr>
+	<td>
+		Delta
+	</td>
+	<td>
+		Sets the amount of difference allowed in the compared pixels.  A value of zero means the pixels must match
+		exactly to be made transparent.  A larger value allows slight a variation in the pixels.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Layer
+	</td>
+	<td>
+		Selects the layer used for comparison.
+	</td>
+</tr>
+
+</table>
+
+<p>See Also:
+<br><a href="#TransparentColour">Transparent Colour</a>
+<br><a href="#Sublayer">Sublayer</a>
+
+
+<!--_________________________________________________________________________________________________-->
+<hr>
+<h4><a name="DirectionalBlur">Directional Blur</a></h4>
+<p>Blurs the image in a given direction.
+
+<p>
+<table style="margin-left:20px;font-size:10pt" border="1" cellpadding=5 cellspacing=0 width="75%">
+<tr>
+	<th style="width:10em">
+		Setting
+	</th>
+	<th>
+		Function
+	</th>
+</tr>
+
+<tr>
+	<td>
+		Blur
+	</td>
+	<td>
+		Sets the level of blurring.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Angle
+	</td>
+	<td>
+		Sets the direction of the blur in clockwise degrees.  A value of 0 is to the right, 90 is down,
+		180 is left, and 270 is up.
+	</td>
+</tr>
+
+</table>
+
+<p>See Also:
+<br><a href="#BoxBlur">Box Blur</a>
+<br><a href="#GaussianBlur">Gaussian Blur</a>
+<br><a href="#RadialBlur">Radial Blur</a>
+<br><a href="#StackedBlur">Stacked Blur</a>
+<br><a href="#MotionBlur">Motion Blur</a>
+
+
+
+<!--_________________________________________________________________________________________________-->
+<hr>
+<h4><a name="Emboss">Emboss</a></h4>
+<p>Replaces the image with an gray-scaled, embossed image, similar to an image on a coin or engraving.
+
+<p>
+<table style="margin-left:20px;font-size:10pt" border="1" cellpadding=5 cellspacing=0 width="75%">
+<tr>
+	<th style="width:10em">
+		Setting
+	</th>
+	<th>
+		Function
+	</th>
+</tr>
+
+<tr>
+	<td>
+		Emboss
+	</td>
+	<td>
+		Sets the intensity of the embossed image.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Width
+	</td>
+	<td>
+		Sets the width of the edges, which controls the separation between the highlighted and shadowed aspects
+		of the effect.
+	</td>
+</tr>
+
+</table>
+
+
+<!--_________________________________________________________________________________________________-->
+<hr>
+<h4><a name="Flip">Flip</a></h4>
+<p>Flips the image.  <b>Vertically</b> inverts the image. <b>Horizontally</b> gives a mirror image.
+
+
+<!--_________________________________________________________________________________________________-->
+<hr>
+<h4><a name="FreezeFrame">Freeze Frame</a></h4>
+<p>Displays the first frame in the effect range.  No other frames are shown.  Adjust the Start and Finish
+effect range times to select the frame to freeze and the duration of the freeze.
+
+
+<!--_________________________________________________________________________________________________-->
+<hr>
+<h4><a name="Gamma">Gamma</a></h4>
+<p>Changes the image's <a href="http://en.wikipedia.org/wiki/Gamma_correction">gamma</a> value.
+
+<p>
+<table style="margin-left:20px;font-size:10pt" border="1" cellpadding=5 cellspacing=0 width="75%">
+<tr>
+	<th style="width:10em">
+		Setting
+	</th>
+	<th>
+		Function
+	</th>
+</tr>
+
+<tr>
+	<td>
+		Gamma
+	</td>
+	<td>
+		Sets the gamma level for the image
+	</td>
+</tr>
+
+</table>
+
+<p>See Also:
+<br><a href="#ColourLevels">Colour Levels</a>
+<br><a href="#BrightnessContrast">Brightness/Contrast</a>
+
+
+
+<!--_________________________________________________________________________________________________-->
+<hr>
+<h4><a name="GaussianBlur">Gaussian Blur</a></h4>
+<p>Blurs the image using the <a href="http://en.wikipedia.org/wiki/Gaussian_blur">gaussian blur method</a>.
+
+<p>
+<table style="margin-left:20px;font-size:10pt" border="1" cellpadding=5 cellspacing=0 width="75%">
+<tr>
+	<th style="width:10em">
+		Setting
+	</th>
+	<th>
+		Function
+	</th>
+</tr>
+
+<tr>
+	<td>
+		Blur
+	</td>
+	<td>
+		Sets the level of blurring.
+	</td>
+</tr>
+
+</table>
+
+<p>See Also:
+<br><a href="#BoxBlur">Box Blur</a>
+<br><a href="#DirectionalBlur">Directional Blur</a>
+<br><a href="#RadialBlur">Radial Blur</a>
+<br><a href="#StackedBlur">Stacked Blur</a>
+<br><a href="#MotionBlur">Motion Blur</a>
+
+
+<!--_________________________________________________________________________________________________-->
+<hr>
+<h4><a name="Glow">Glow</a></h4>
+<p>Adds a coloured glow to the non-transparent parts of the image around the outside.  The image must have some
+transparent areas for the glow to be visible.  Use the <a href="#TransparentColour">Transparent Colour</a> effect
+to make areas transparent before using this effect.  Use this effect to add a glow to the text in Caption sections.
+
+<p>
+<table style="margin-left:20px;font-size:10pt" border="1" cellpadding=5 cellspacing=0 width="75%">
+<tr>
+	<th style="width:10em">
+		Setting
+	</th>
+	<th>
+		Function
+	</th>
+</tr>
+
+<tr>
+	<td>
+		Colour
+	</td>
+	<td>
+		Sets the colour of the glow.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Opacity
+	</td>
+	<td>
+		Sets the opacity of the glow.  The opacity diminishes further away from the edges of the image based
+		on the Softness setting.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Softness
+	</td>
+	<td>
+		Sets how slowly the opacity diminishes from the edges.
+	</td>
+</tr>
+
+</table>
+<p>See Also:
+<br><a href="#InnerGlow">Inner Glow</a>
+<br><a href="#TransparentColour">Transparent Colour</a>
+
+
+<!--_________________________________________________________________________________________________-->
+<hr>
+<h4><a name="Hue">Hue</a></h4>
+<p>Shifts the overall hue in the image.
+
+<table style="margin-left:20px;font-size:10pt" border="1" cellpadding=5 cellspacing=0 width="75%">
+<tr>
+	<th style="width:10em">
+		Setting
+	</th>
+	<th>
+		Function
+	</th>
+</tr>
+
+<tr>
+	<td>
+		Hue
+	</td>
+	<td>
+		Sets the amount to shift the hue from -1 to +1.  A value of 0.0 is unchanged.
+	</td>
+</tr>
+
+</table>
+
+
+<!--_________________________________________________________________________________________________-->
+<hr>
+<h4><a name="InnerGlow">Inner Glow</a></h4>
+<p>Adds a coloured glow to the non-transparent parts of the image around the inside.  The image must have some
+transparent areas for the glow to be visible.  Use the <a href="#TransparentColour">Transparent Colour</a>
+effect to make areas transparent before using this effect.
+
+<p>
+<table style="margin-left:20px;font-size:10pt" border="1" cellpadding=5 cellspacing=0 width="75%">
+<tr>
+	<th style="width:10em">
+		Setting
+	</th>
+	<th>
+		Function
+	</th>
+</tr>
+
+<tr>
+	<td>
+		Colour
+	</td>
+	<td>
+		Sets the colour of the glow.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Opacity
+	</td>
+	<td>
+		Sets the opacity of the glow.  The opacity diminishes further away from the edges of the image based
+		on the Softness setting.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Softness
+	</td>
+	<td>
+		Sets how slowly the opacity diminishes from the edges.
+	</td>
+</tr>
+
+</table>
+<p>See Also:
+<br><a href="#Glow">Glow</a>
+<br><a href="#TransparentColour">Transparent Colour</a>
+
+
+<!--_________________________________________________________________________________________________-->
+<hr>
+<h4><a name="InvertAlpha">Invert Alpha</a></h4>
+<p>Makes all transparent pixels opaque and all opaque pixels transparent.  Use this effect with transparent
+images to create a mask for the image.
+
+<p>See Also:
+<br><a href="#Mask">Mask</a>.
+
+
+<!--_________________________________________________________________________________________________-->
+<hr>
+<h4><a name="InvertColour">Invert Colour</a></h4>
+<p>Inverts the colours/hue in the image.
+
+
+<!--_________________________________________________________________________________________________-->
+<hr>
+<h4><a name="Mask">Mask</a></h4>
+<p>Converts the colour intensity to transparency.  Black is completely transparent.  White is completely
+opaque.  Shades of gray are semi-transparent based on their intensity.  Other colours are semi-transparent
+based on their gray-scale intensity.
+
+<p>See Also:
+<br><a href="#InvertAlpha">Invert Alpha</a>.
+
+
+<!--_________________________________________________________________________________________________-->
+<hr>
+<h4><a name="Math">Math</a></h4>
+<p>Applies a mathematical operation to the bits/pixels in the image and the selected layer.  Use this feature to
+create masks and other effects.
+
+<p>
+<table style="margin-left:20px;font-size:10pt" border="1" cellpadding=5 cellspacing=0 width="75%">
+<tr>
+	<th style="width:10em">
+		Setting
+	</th>
+	<th>
+		Function
+	</th>
+</tr>
+
+<tr>
+	<td>
+		Operation
+	</td>
+	<td>
+		Sets the mathematical operation to use:
+		<ul>
+		<li>Add: Adds the image to the selected layer.
+		<li>Subtract: Subtracts the image from the selected layer.
+		<li>Multiply: Multiplies the image with the selected layer.
+		<li>And: Logical ANDs the image with the selected layer.
+		<li>Or: Logical ORs the image with the selected layer.
+		<li>Xor: Logical XORs the image with the selected layer.
+		<li>Not: Logical NOTs the image, inverting colours.
+		<li>Zero: Replaces all pixels with zero (transparent).
+		<li>One: Replaces all pixel bits with one (solid white).
+		</ul>
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Layer
+	</td>
+	<td>
+		Sets the layer to use for the second operand in the mathematical operation.
+		<ul>
+		<li>Top Layer: The current image for this section, with effects applied.
+		<li>Back Layer: The background composited image from all rendered track up to this track.
+		<li>Original: The current image for this section, with no effects applied.
+		<li>Clipboard: The image in the internal clipboard.  Use <a href="#Copy">Copy</a> to copy an image to
+		the internal clipboard.
+		</ul>
+	</td>
+</tr>
+
+</table>
+
+
+<!--_________________________________________________________________________________________________-->
+<hr>
+<h4><a name="Monochrome">Monochrome</a></h4>
+<p>Removes all colour from the image, making it gray-scale (black and white).
+
+
+<!--_________________________________________________________________________________________________-->
+<hr>
+<h4><a name="MotionBlur">Motion Blur</a></h4>
+<p>Mixes older frames of video with the current frame, simulating a simple
+<a href="http://en.wikipedia.org/wiki/Motion_blur">motion blur</a> effect.  This effect requires
+movement in the image from one frame to the next, either from moving video or from other effects.
+
+<p>
+<table style="margin-left:20px;font-size:10pt" border="1" cellpadding=5 cellspacing=0 width="75%">
+<tr>
+	<th style="width:10em">
+		Setting
+	</th>
+	<th>
+		Function
+	</th>
+</tr>
+
+<tr>
+	<td>
+		Opacity
+	</td>
+	<td>
+		Sets the opacity level at which older frames are mixed.  Higher values increase blurring.
+	</td>
+</tr>
+
+</table>
+
+<p>See Also:
+<br><a href="#BoxBlur">Box Blur</a>
+<br><a href="#DirectionalBlur">Directional Blur</a>
+<br><a href="#GaussianBlur">Gaussian Blur</a>
+<br><a href="#RadialBlur">Radial Blur</a>
+<br><a href="#StackedBlur">Stacked Blur</a>
+
+
+<!--_________________________________________________________________________________________________-->
+<hr>
+<h4><a name="Noise"></a>Noise</h4>
+<p>Adds noise (static) to the image.
+
+<p>
+<table style="margin-left:20px;font-size:10pt" border="1" cellpadding=5 cellspacing=0 width="75%">
+<tr>
+	<th style="width:10em">
+		Setting
+	</th>
+	<th>
+		Function
+	</th>
+</tr>
+
+<tr>
+	<td>
+		Minimium
+	</td>
+	<td>
+		Sets the lower intensity level of noise.  This controls how dark or transparent the noise is.
+	</td>
+</tr>
+<tr>
+	<td>
+		Maximum
+	</td>
+	<td>
+		Sets the upper intensity level of noise.  This controls how light or opaque the noise is.
+	</td>
+</tr>
+<tr>
+	<td>
+		Original
+	</td>
+	<td>
+		Sets the opacity of the original image.  Using a variable intensity from 100% to 0% makes the image
+		fade to complete static.
+	</td>
+</tr>
+<tr>
+	<td>
+		Mode
+	</td>
+	<td>
+		Sets the alpha noise mode.  
+		<ul>
+		<li>No Alpha: The alpha channel is unchanged from the original
+		<li>Alpha: Noise is added to the alpha channel
+		<li>Only Alpha: Noise is added only to the alpha channel
+		</ul>
+	</td>
+</tr>
+
+</table>
+
+<p>See Also:
+<br><a href="#FadeTransition">Fade Transition</a>
+
+
+
+<!--_________________________________________________________________________________________________-->
+<hr>
+<h4><a name="Opacity"></a>Opacity</h4>
+<p>Sets the opacity of the image.  Use this effect to make an image semi-transparent or fade in or out.
+
+<p>
+<table style="margin-left:20px;font-size:10pt" border="1" cellpadding=5 cellspacing=0 width="75%">
+<tr>
+	<th style="width:10em">
+		Setting
+	</th>
+	<th>
+		Function
+	</th>
+</tr>
+
+<tr>
+	<td>
+		Opacity
+	</td>
+	<td>
+		Sets the opacity in percent.  100% is completely opaque.  0% is completely transparent.
+	</td>
+</tr>
+
+</table>
+
+<p>See Also:
+<br><a href="#FadeTransition">Fade Transition</a>
+
+
+
+<!--_________________________________________________________________________________________________-->
+<hr>
+<h4><a name="PanZoom">Pan/Zoom</a></h4>
+<p>Zooms in on part of the image.  Use this effect to achieve a Ken Burns pan by adjusting the position and zoom over time.
+
+<p>To adjust the position point on the original image in the preview, temporarily uncheck the effect in the Effects list.
+
+<p>Use the settings presets to see examples of the types of effects possible.
+
+<p>
+<table style="margin-left:20px;font-size:10pt" border="1" cellpadding=5 cellspacing=0 width="75%">
+<tr>
+	<th style="width:10em">
+		Setting
+	</th>
+	<th>
+		Function
+	</th>
+</tr>
+
+<tr>
+	<td>
+		Center
+	</td>
+	<td>
+		Sets the center for the zoomed image.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Scale
+	</td>
+	<td>
+		Sets the zoom factor.  1.0 shows the entire, original image.  2.0 shows half the image zoomed in.  Larger values show
+		less of the image but more zoomed in.
+	</td>
+</tr>
+</table>
+
+
+
+<!--_________________________________________________________________________________________________-->
+<hr>
+<h4><a name="Paste">Paste</a></h4>
+<p>Pastes the image from the internal clipboard into the image.
+
+<p>
+<table style="margin-left:20px;font-size:10pt" border="1" cellpadding=5 cellspacing=0 width="75%">
+<tr>
+	<td>
+		<b>Setting</b>
+	</td>
+	<td>
+		<b>Function</b>
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Area
+	</td>
+	<td>
+		Sets the area where the clipboard image will be placed.
+		When selected the area appears on the preview screen as a rectangle.  Click-and-drag the corner points
+		to adjust the size.  Click-and-drag inside the rectangle to move the whole rectangle.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Left
+	</td>
+	<td>
+		Sets the position of the left side.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Top
+	</td>
+	<td>
+		Sets the position of the top edge.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Right
+	</td>
+	<td>
+		Sets the position of the right side.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Bottom
+	</td>
+	<td>
+		Sets the position of the bottom edge.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Opacity
+	</td>
+	<td>
+		Sets the opacity of the clipboard image.
+	</td>
+</tr>
+
+</table>
+
+<p>See Also:
+<br><a href="#Copy">Copy</a>
+<br><a href="#Cut">Cut</a>
+<br><a href="#Swap">Swap</a>
+
+
+<!--_________________________________________________________________________________________________-->
+<hr>
+<h4><a name="Perspective">Perspective</a></h4>
+<p>Adjusts the corners of the image, creating a perspective effect.  The image appears to be tilted into the screen,
+giving a sense of depth.
+
+<p>
+<table style="margin-left:20px;font-size:10pt" border="1" cellpadding=5 cellspacing=0 width="75%">
+<tr>
+	<th style="width:10em">
+		Setting
+	</th>
+	<th>
+		Function
+	</th>
+</tr>
+
+<tr>
+	<td>
+		Top Left<br>
+		Top Right<br>
+		Bottom Left<br>
+		Bottom Right
+	</td>
+	<td>
+		Sets the respective corner x and y coordinates.
+	</td>
+</tr>
+</table>
+
+
+
+<!--_________________________________________________________________________________________________-->
+<hr>
+<h4><a name="Position">Position</a></h4>
+<p>Sets the center position of the image within the screen.
+
+<p>
+<table style="margin-left:20px;font-size:10pt" border="1" cellpadding=5 cellspacing=0 width="75%">
+<tr>
+	<td>
+		<b>Setting</b>
+	</td>
+	<td>
+		<b>Function</b>
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Center
+	</td>
+	<td>
+		The center appears on the preview screen as a white point.  Click-and-drag the point
+		to adjust the position.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		X
+	</td>
+	<td>
+		Sets the x coordinate for the center.		
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Y
+	</td>
+	<td>
+		Sets the y coordinate for the center.		
+	</td>
+</tr>
+
+</table>
+
+
+<!--_________________________________________________________________________________________________-->
+<hr>
+<h4><a name="RadialBlur">Radial Blur</a></h4>
+<p>Blurs the image from a center point outward.  Blurring increases further away from the center.
+
+<p>
+<table style="margin-left:20px;font-size:10pt" border="1" cellpadding=5 cellspacing=0 width="75%">
+<tr>
+	<td>
+		<b>Setting</b>
+	</td>
+	<td>
+		<b>Function</b>
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Blur
+	</td>
+	<td>
+		Sets the level of blurring.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Center
+	</td>
+	<td>
+		The center point of the blur has the least amount of blurring.
+		When selected the center appears on the preview screen as a white point. Click-and-drag the point to adjust the position.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		X
+	</td>
+	<td>
+		Sets the x coordinate of the center point.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Y
+	</td>
+	<td>
+		Sets the y coordinate of the center point.
+	</td>
+</tr>
+
+</table>
+
+<p>See Also:
+<br><a href="#BoxBlur">Box Blur</a>
+<br><a href="#DirectionalBlur">Directional Blur</a>
+<br><a href="#GaussianBlur">Gaussian Blur</a>
+<br><a href="#StackedBlur">Stacked Blur</a>
+<br><a href="#MotionBlur">Motion Blur</a>
+
+
+<!--_________________________________________________________________________________________________-->
+<hr>
+<h4><a name="RotateScale">Rotate/Scale</a></h4>
+<p>Rotates and scales the image about a center point.  Use this effect to correct a video that was recorded
+while holding the camera sideways (such as holding a iPhone vertically instead of horizontally).
+
+<p>
+<table style="margin-left:20px;font-size:10pt" border="1" cellpadding=5 cellspacing=0 width="75%">
+<tr>
+	<th style="width:10em">
+		Setting
+	</th>
+	<th>
+		Function
+	</th>
+</tr>
+
+<tr>
+	<td>
+		Rotation
+	</td>
+	<td>
+		Sets the rotation angle of the image in clockwise degrees from -180 to +180.  The image is rotated clockwise for
+		increasing values, counter-clockwise fo decreasing values.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Scale
+	</td>
+	<td>
+		Sets the scale factor of the image.  1.0 is full size.  Values below 1.0 make the image smaller.
+		Values above 1.0 make it larger.
+	</td>
+</tr>
+
+
+<tr>
+	<td>
+		Scale Center
+	</td>
+	<td>
+		When selected the center appears on the preview screen as a white point.  Click-and-drag the point
+		to adjust the position.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		X
+	</td>
+	<td>
+		Sets the x coordinate for the center.		
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Y
+	</td>
+	<td>
+		Sets the y coordinate for the center.		
+	</td>
+</tr>
+
+</table>
+
+
+<!--_________________________________________________________________________________________________-->
+<hr>
+<h4><a name="ScanlineShift">Scanline Shift</a></h4>
+<p>Shift the horizontal scanlines in the image.
+
+<p>
+<table style="margin-left:20px;font-size:10pt" border="1" cellpadding=5 cellspacing=0 width="75%">
+<tr>
+	<th style="width:10em">
+		Setting
+	</th>
+	<th>
+		Function
+	</th>
+</tr>
+
+<tr>
+	<td>
+		Amplitude
+	</td>
+	<td>
+		Sets the amount of horizontal shifting.
+	</td>
+</tr>
+<tr>
+	<td>
+		Frequency
+	</td>
+	<td>
+		Sets the number of oscillations or shifts spanning the height of the image.
+	</td>
+</tr>
+<tr>
+	<td>
+		Rate
+	</td>
+	<td>
+		Sets the rate of change of the oscillations or shifts over time.
+	</td>
+</tr>
+<tr>
+	<td>
+		Mode
+	</td>
+	<td>
+		Sets the function used to calculate the shifts from one scanline to the next.
+		<ul>
+		<li>Sine: shifts are calculated based on a sine wave
+		<li>Square: shifts are calculated based on a square wave
+		<li>Random: shifts are random
+		</ul>
+	</td>
+</tr>
+
+</table>
+
+<p>See Also:
+<br><a href="#ColourShift">Colour Shift</a>
+<br><a href="#Noise">Noise</a>
+
+
+<!--_________________________________________________________________________________________________-->
+<hr>
+<h4><a name="Shadow">Shadow</a></h4>
+<p>Adds a coloured shadow to the the image.  The image must have some
+transparent areas for the shadow to be visible.  Use the <a href="#TransparentColour">Transparent Colour</a> effect
+to make areas transparent before using this effect.  Use this effect to add a shadow to the text in Caption sections.
+
+<p>
+<table style="margin-left:20px;font-size:10pt" border="1" cellpadding=5 cellspacing=0 width="75%">
+<tr>
+	<th style="width:10em">
+		Setting
+	</th>
+	<th>
+		Function
+	</th>
+</tr>
+
+<tr>
+	<td>
+		Direction
+	</td>
+	<td>
+		Sets the direction of the shadow in clockwise degrees.  A value of 0 is to the right, 90 is below,
+		180 is to the left, and 270 is above.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Distance
+	</td>
+	<td>
+		Sets the distance of the shadow from the image.  A greater distance creates more depth.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Opacity
+	</td>
+	<td>
+		Sets the opacity of the shadow.  The shadow diminishes further away from the edges of the image based
+		on the Softness setting.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Colour
+	</td>
+	<td>
+		Sets the colour of the shadow.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Softness
+	</td>
+	<td>
+		Sets how slowly the opacity diminishes from the edges of the image.
+	</td>
+</tr>
+
+</table>
+<p>See Also:
+<br><a href="#Glow">Glow</a>
+<br><a href="#InnerGlow">Inner Glow</a>
+<br><a href="#TransparentColour">Transparent Colour</a>
+
+
+<!--_________________________________________________________________________________________________-->
+<hr>
+<h4><a name="Silhouette">Silhouette</a></h4>
+<p>Replaces all colour with either the Above Colour or the Below Colour depending on the Threshold.  Pixels with an intensity
+greater than or equal to the threshold are set to the Above Colour.  Pixels with intensity lower than the threshold are set to the
+Below Colour.
+
+<table style="margin-left:20px;font-size:10pt" border="1" cellpadding=5 cellspacing=0 width="75%">
+<tr>
+	<th style="width:10em">
+		Setting
+	</th>
+	<th>
+		Function
+	</th>
+</tr>
+
+<tr>
+	<td>
+		Threshold
+	</td>
+	<td>
+		Sets the intensity level pixels must have to be set to the Above colour.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Above Colour
+	</td>
+	<td>
+		Sets the colour to use when intensity is above the threshold
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Below Colour
+	</td>
+	<td>
+		Sets the colour to use when intensity is below the threshold
+	</td>
+</tr>
+
+</table>
+
+
+<!--_________________________________________________________________________________________________-->
+<hr>
+<h4><a name="Size">Size</a></h4>
+<p>Adjusts the width and height of the image.
+
+<table style="margin-left:20px;font-size:10pt" border="1" cellpadding=5 cellspacing=0 width="75%">
+<tr>
+	<th style="width:10em">
+		Setting
+	</th>
+	<th>
+		Function
+	</th>
+</tr>
+
+<tr>
+	<td>
+		Width
+	</td>
+	<td>
+		Sets the image width.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Height
+	</td>
+	<td>
+		Sets the image height.
+	</td>
+</tr>
+
+</table>
+
+
+<!--_________________________________________________________________________________________________-->
+<hr>
+<h4><a name="StackedBlur">Stacked Blur</a></h4>
+<p>Blurs the image using a stacked blur method, similar to the <a href="#GaussianBlur">Gaussian Blur</a>.
+
+<p>
+<table style="margin-left:20px;font-size:10pt" border="1" cellpadding=5 cellspacing=0 width="75%">
+<tr>
+	<th style="width:10em">
+		Setting
+	</th>
+	<th>
+		Function
+	</th>
+</tr>
+
+<tr>
+	<td>
+		Blur
+	</td>
+	<td>
+		Sets the level of blurring.
+	</td>
+</tr>
+
+</table>
+
+<p>See Also:
+<br><a href="#BoxBlur">Box Blur</a>
+<br><a href="#DirectionalBlur">Directional Blur</a>
+<br><a href="#GaussianBlur">Gaussian Blur</a>
+<br><a href="#RadialBlur">Radial Blur</a>
+<br><a href="#MotionBlur">Motion Blur</a>
+
+
+<!--_________________________________________________________________________________________________-->
+<hr>
+<h4><a name="Strobe">Strobe</a></h4>
+<p>Simulates a strobe light effect.  Single frames are shown for an extended period of time and optionally
+faded in or out.
+
+<p>
+<table style="margin-left:20px;font-size:10pt" border="1" cellpadding=5 cellspacing=0 width="75%">
+<tr>
+	<th style="width:10em">
+		Setting
+	</th>
+	<th>
+		Function
+	</th>
+</tr>
+
+<tr>
+	<td>
+		Pulse Rate
+	</td>
+	<td>
+		Sets the number of times the strobe flashes per minute. A value of 60 strobes once per second, which
+		means a single frame is shown once per second, similar to taking one picture per second with a camera.
+		
+	</td>
+</tr>
+
+<tr>
+	<td>
+		On
+	</td>
+	<td>
+		Sets the percentage of time the frame remains visible.  A value of 50% show the frame for half of the
+		Pulse Rate.  So the frame would be visible for half a second if the Pulse Rate is 60 BPM and black or
+		transparent for the remainder of the time.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Fade In
+	</td>
+	<td>
+		Sets the percentage of the On time it takes for the frame to fade in.  A value of 25% fades in the frame
+		one quarter of the On time, which would be 0.125 seconds with a Pulse Rate of 60 BPM and an On time of 50%.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Fade Out
+	</td>
+	<td>
+		Sets the percentage of the On time it takes for the frame to fade out.  A value of 25% fades the frame to
+		black/transparent in one quarter of the On time, which would be 0.125 seconds with a Pulse Rate of
+		60 BPM and an On time of 50%.
+	</td>
+</tr>
+
+</table>
+
+<p>See Also:
+<br><a href="#Freeze">Freeze</a>
+
+
+<!--_________________________________________________________________________________________________-->
+<hr>
+<h4><a name="Sublayer">Sublayer</a></h4>
+<p>Places a copy of the image into a sublayer, which is a non-visible layer that may be used for more complex compositing.
+Unlike the <br><a href="#Copy">Copy</a> effect, which is limited to one section, all tracks and sections can access the sublayer,
+providing a way of passing an image from one track layer to another.
+The sublayer is shared by all tracks and sections.  See the <a href="#Difference">Difference</a> effect for an example.
+
+<p>See Also:
+<br><a href="#Copy">Copy</a>
+<br><a href="#Cut">Cut</a>
+<br><a href="#Difference">Difference</a>
+<br><a href="#Paste">Paste</a>
+<br><a href="#Superlayer">Superlayer</a>
+
+
+<!--_________________________________________________________________________________________________-->
+<hr>
+<h4><a name="Superlayer">Superlayer</a></h4>
+<p>Replaces the image with the sublayer image.  A section in a lower track must use <a href="#Sublayer">Sublayer</a> to
+place an image in the sublayer first.
+
+<p>See Also:
+<br><a href="#Copy">Copy</a>
+<br><a href="#Cut">Cut</a>
+<br><a href="#Difference">Difference</a>
+<br><a href="#Paste">Paste</a>
+<br><a href="#Sublayer">Sublayer</a>
+
+
+<!--_________________________________________________________________________________________________-->
+<hr>
+<h4><a name="Swap">Swap</a></h4>
+<p>Exchanges the image in the internal clipboard with the current image.  The current image is copied to
+the clipboard and is then replaced with the clipboard image.
+
+<p>See Also:
+<br><a href="#Copy">Copy</a>
+<br><a href="#Cut">Cut</a>
+<br><a href="#Paste">Paste</a>
+
+
+<!--_________________________________________________________________________________________________-->
+<hr>
+<h4><a name="Thermal">Thermal</a></h4>
+<p>Replaces the brightness/intensity of the image with a colour gradient.  Two Thermal effects (one Rainbow
+and one Hot) creates a more pronounced effect.
+
+<p>
+<table style="margin-left:20px;font-size:10pt" border="1" cellpadding=5 cellspacing=0 width="75%">
+<tr>
+	<th style="width:10em">
+		Setting
+	</th>
+	<th>
+		Function
+	</th>
+</tr>
+
+<tr>
+	<td>
+		Gradient
+	</td>
+	<td>
+		Sets the colour gradient for replacing the intensity.
+		<ul>
+		<li>Rainbow: all colours of the rainbow.
+		<li>Hot: red base colour.
+		</ul>
+	</td>
+</tr>
+
+</table>
+
+
+<!--_________________________________________________________________________________________________-->
+<hr>
+<h4><a name="Tint">Tint</a></h4>
+<p>Adds a tint to the image.  Use with the <a href="#Monochrome">Monochrome</a> effect to create a Sepia effect.
+
+<p>
+<table style="margin-left:20px;font-size:10pt" border="1" cellpadding=5 cellspacing=0 width="75%">
+<tr>
+	<th style="width:10em">
+		Setting
+	</th>
+	<th>
+		Function
+	</th>
+</tr>
+
+<tr>
+	<td>
+		Tint
+	</td>
+	<td>
+		Sets the colour of the tint.  Adjust the transparency setting to control the saturation
+		of the tint.
+	</td>
+</tr>
+
+</table>
+
+<p>See Also:
+<br><a href="#ColourLevels">Colour Levels</a>
+
+
+<!--_________________________________________________________________________________________________-->
+<hr>
+<h4><a name="Toon"></a>Toon</h4>
+<p>Reduces the colour levels of the image, giving a cartoon style of colour.
+
+<p>Also known as: Colour Reduction, Colour Quantization, Colour Depth
+
+<p>
+<table style="margin-left:20px;font-size:10pt" border="1" cellpadding=5 cellspacing=0 width="75%">
+<tr>
+	<th style="width:10em">
+		Setting
+	</th>
+	<th>
+		Function
+	</th>
+</tr>
+
+<tr>
+	<td>
+		Colour Levels
+	</td>
+	<td>
+		Sets the number of colour levels allowed for each primary colour.  A value of 3 gives three
+		levels each of of red, green, and blue.
+	</td>
+</tr>
+
+</table>
+
+
+<!--_________________________________________________________________________________________________-->
+<hr>
+<h4><a name="TransparentColour">Transparent Colour</a></h4>
+<p>Makes a range of colours in the image transparent.  Use this feature to replace a solid background colour,
+such as green or blue, with a different image or video.
+
+Also known as: Chroma Key, Green Screen, Blue Screen
+
+<p>
+<table style="margin-left:20px;font-size:10pt" border="1" cellpadding=5 cellspacing=0 width="75%">
+<tr>
+	<th style="width:10em">
+		Setting
+	</th>
+	<th>
+		Function
+	</th>
+</tr>
+
+<tr>
+	<td>
+		Colour
+	</td>
+	<td>
+		Sets the base colour to make transparent.
+		Click on the preview window to pick a colour from the image.  Click-and-drag on the preview window to
+		get the average colour of all the pixels touched.  Select a colour from the popup that appears.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Tolerance
+	</td>
+	<td>
+		Sets the range from the base colour to make transparent.  The larger the value, the more variations in
+		the base colour are transparent.
+	</td>
+</tr>
+
+</table>
+
+<p>See Also:
+<br><a href="#ColourFilter">Colour Filter</a>
+<br><a href="#Difference">Difference</a>
+
+
+<!--_________________________________________________________________________________________________-->
+<hr>
+<h4><a name="Viewport">Viewport</a></h4>
+<p>Confines all further processing to the selected area.  All effects and modifications occur
+only within the viewport.  Normally effects are applied to the entire image.  Use Viewport
+to apply an effect to only part of the image.
+
+<p>The background layer is replaced with the area in the top layer image that is covered by the viewport.
+
+<table style="margin-left:20px;font-size:10pt" border="1" cellpadding=5 cellspacing=0 width="75%">
+<tr>
+	<th style="width:10em">
+		Setting
+	</th>
+	<th>
+		Function
+	</th>
+</tr>
+
+<tr>
+	<td>
+		Area
+	</td>
+	<td>
+		When selected the area appears on the preview screen as a rectangle.  Click-and-drag the corner points
+		to adjust the size.  Click-and-drag inside the rectangle to move the whole rectangle.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Center X
+	</td>
+	<td>
+		Sets the viewport center x coordinate.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Center Y
+	</td>
+	<td>
+		Sets the viewport center y coordinate.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Width
+	</td>
+	<td>
+		Sets the viewport width.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Height
+	</td>
+	<td>
+		Sets the viewport height.
+	</td>
+</tr>
+
+<tr>
+	<td>
+		Layer
+	</td>
+	<td>
+		Selects the video layer to appear in the viewport.
+	</td>
+</tr>
+
+</table>
+
+
+<div style="height:1000px"></div>
+
+<!--_________________________________________________________________________________________________-->
+<!--
+<hr>
+<h4><a name=""></a></h4>
+<p>
+
+<p>
+<table style="margin-left:20px;font-size:10pt" border="1" cellpadding=5 cellspacing=0 width="75%">
+<tr>
+	<th style="width:10em">
+		Setting
+	</th>
+	<th>
+		Function
+	</th>
+</tr>
+
+<tr>
+	<td>
+		
+	</td>
+	<td>
+		
+	</td>
+</tr>
+
+</table>
+
+-->
+
+</BODY>
+</HTML>

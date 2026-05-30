@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 4.01//EN">
+<HTML>
+<HEAD>
+<link rel="stylesheet" title="Default" href="style.css">
+<Title>Auto Split Video</Title>
+</HEAD>
+<BODY>
+
+<H3>Auto Split Video</H3>
+
+<p class="location">Menu Command: <b>Edit | Auto Split Video</b></p>
+
+<P>Divides a long video section into smaller sections based on content changes (shot or scene changes) using a relatively simple
+detection algorithm.  Use the <b>Mode</b> setting to control how splits are generated.  Select
+<b>Automatic</b> to generate all splits automatically (not recommended).  Select <b>Interactive</b> mode
+to see where content changes are detected, then use the <B>Split</B> button to set a split or the <B>Next</b> button
+to continue to the next detected content change.
+
+<p>Use <b>Maximum rate of change</b> to control the amount of change from one frame to the next to be considered
+a shot or scene change.  Values around 25% usually work well.  Use lower values when all content is very similar with
+smooth camera movements.  Use higher values for rapid camera movements or quickly varying colours or contrast.
+
+<p>Due to the simplicity of the detection algorithm, some content changes may be missed (gradual crossfades, for example)
+or false positives may occur (shakey camera, for example).
+<b>Interactive</b> mode is recommended with a slightly lower <b>Maximum rate of change</b> value to detect and verify
+the appropriate split points.
+
+<p>The progress bar shows the amount of the video file process so far and the relative positions of the splits.  The total number
+of splits is given to the right.
+
+<p>Choose the <b>Apply Splits</b> button to apply all the splits to the video section.
+
+<p><b>See Also</b><br>
+<a href="MenuEdit.html#Split">Split</a><br>
+
+</BODY>
+</HTML>

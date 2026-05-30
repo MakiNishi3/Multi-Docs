@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 4.01//EN">
+<HTML>
+<HEAD>
+<link rel="stylesheet" title="Default" href="style.css">
+<Title>Audio Section Settings</Title>
+</HEAD>
+<BODY>
+
+<H3>Audio Section Settings</H3>
+
+<p class="location">Menu Command: <b>Options | Section Settings</b> or
+right-click an <a href="IntroElements.html">audio section</a>
+and choose <b>Settings</b> or choose the Settings button in the section's title bar.</p>
+
+<P>Use Audio Section Settings to change the following:
+<ul>
+<li>Text shown in the title bar
+<li>Time range of audio played from the file
+<li>Playback speed
+<li>Colour of the section's title bar
+<li>Channel configuration
+<li>Decode a variable bitrate file for better synchronization
+</ul>
+
+<dl>
+<dt>Location
+<dd>Shows the location on the hard drive where the audio file is stored.  This setting cannot be changed.
+<dt>Decode Audio To Wave File For Best Synchronization
+<dd>Converts an encoded, variable bitrate audio file to PCM Wave format, which supports sample accurate seeking and synchronization.
+Variable bitrate files are often difficult to synchronize when previewing.  Decoding to Wave eliminates synchronization problems.
+Note that some video files have poor audio/video synchronization due to differences in hardware timing.  A very slight adjustment
+to the Speed setting (below) will correct a synchronization drift.
+
+<dt>Title
+<dd>Sets the text shown in the title bar.
+
+<dt>Range
+<dd>Sets the start and finish <a href="Timebox.html">times</a> within the file.
+Choose the <B>All</B> button to play the entire file.
+
+<dt>Speed
+<dd>Sets the playback speed.  Values above 100 increase the speed and pitch.  Values below 100 lower the
+speed and pitch.  To compensate for pitch changes, add a <a href="AudioEffects.html#Pitch">Pitch</a> effect.
+
+<dt>Channels
+<dd>Sets the channel mapping for the section.  The mapping is shown in the window below the setting.  Either
+select a preset channel mapping from the drop-down list or manually connect source channels to destination channels.
+To connect channels manually, first click on a source channel circle, then click on each of the destination channel
+circles.  If the connection already exists, clicking on the destination channel circle will remove the connection.
+
+<dt>Connect available channels only
+<dd>Only channels that are available in the <a href="OptionsProject.html">project setting</a> are connected.  Otherwise
+all channels are connected in case different project channel settings are used later.
+
+</dl>
+
+<p><b>See Also</b><br>
+<a href="EffectEditorAudio.html">Audio Effects</a>
+
+</BODY>
+</HTML>

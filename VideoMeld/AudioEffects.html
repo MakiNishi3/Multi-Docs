@@ -1,0 +1,494 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 4.01//EN">
+<HTML>
+<HEAD>
+<link rel="stylesheet" title="Default" href="style.css">
+<Title>Audio Effects</Title>
+</HEAD>
+<BODY>
+
+<H3>Audio Effects</H3>
+
+<p class="location">Menu Command: <b>Effect | Add Or Modify</b> (with one audio or speech section selected)</p>
+
+<p>Audio effects may be added using the <a href="EffectEditorAudio.html">Audio Effects Editor</a> or by dragging and
+dropping effects from the <a href="EffectBar.html">Effect Bar</a> to the section.
+
+<p>The function and settings of the effects (sorted alphabetically) are explained below.  See
+<a href="EffectEditorAudio.html">Audio Effects Editor</a> for general information about changing effects settings.
+
+
+<!--_________________________________________________________________________________________________-->
+<hr>
+<h4><a name="Compressor">Compressor/Expander</a></h4>
+<p>Changes the dynamic range of the audio.  See
+<a href="http://en.wikipedia.org/wiki/Dynamic_range_compression">Dynamic Range Compression</a>.
+
+
+<p>
+<table style="margin-left:20px;font-size:10pt" border="1" cellpadding=5 cellspacing=0 width="75%">
+<tr>
+	<td valign="top">
+		<b>Setting</b>
+	</td>
+	<td valign="top">
+		<b>Function</b>
+	</td>
+</tr>
+
+<tr>
+	<td valign="top">
+		Threshold
+	</td>
+	<td valign="top">
+		Sets the volume level to apply the effect.
+	</td>
+</tr>
+
+<tr>
+	<td valign="top">
+		Ratio
+	</td>
+	<td valign="top">
+		Sets the compression or expansion ratio.
+	</td>
+</tr>
+
+<tr>
+	<td valign="top">
+		Attack
+	</td>
+	<td valign="top">
+		Sets the amount of time it takes for the effect to act when the thresold is reached.
+	</td>
+</tr>
+
+<tr>
+	<td valign="top">
+		Release
+	</td>
+	<td valign="top">
+		Sets the amount of time it takes for the effect to stop when the volume no longer reaches the thresold.
+	</td>
+</tr>
+
+<tr>
+	<td valign="top">
+		Gain
+	</td>
+	<td valign="top">
+		Sets the overall gain of the effect.
+	</td>
+</tr>
+
+<tr>
+	<td valign="top">
+		Source Volume
+	</td>
+	<td valign="top">
+		Sets the volume of the original audio to mix in the output.  Usually this is zero.
+	</td>
+</tr>
+
+</table>
+
+
+<!--_________________________________________________________________________________________________-->
+<hr>
+<h4><a name="Equalizer">Equalizer</a></h4>
+<p>Changes the frequency of the audio.
+See <a href="http://en.wikipedia.org/wiki/Equalization_(audio)">Equalization</a> for details.
+
+<p>
+<table style="margin-left:20px;font-size:10pt" border="1" cellpadding=5 cellspacing=0 width="75%">
+<tr>
+	<td valign="top">
+		<b>Setting</b>
+	</td>
+	<td valign="top">
+		<b>Function</b>
+	</td>
+</tr>
+
+<tr>
+	<td valign="top">
+		Effect Volume
+	</td>
+	<td valign="top">
+		Sets the overall volume (gain) for the effect
+	</td>
+</tr>
+
+<tr>
+	<td valign="top">
+		Source Volume
+	</td>
+	<td valign="top">
+		Sets the volume of the original audio to mix in the output.  Usually this is zero.
+	</td>
+</tr>
+
+<tr>
+	<td valign="top">
+		10 Frequency bands
+	</td>
+	<td valign="top">
+		The frequency specifies the center of the band.  The setting controls the gain for each of the
+		given bands.  Bass is in the smaller frequency bands.  Treble is in the higher bands.
+	</td>
+</tr>
+
+</table>
+
+
+<!--_________________________________________________________________________________________________-->
+<hr>
+<h4><a name="Flanger">Flanger</a></h4>
+<p>Mixes the audio with a delayed copy of itself to create a variety of audio effects.
+See <a href="http://en.wikipedia.org/wiki/Flanging">Flanging</a>.
+
+<p>
+<table style="margin-left:20px;font-size:10pt" border="1" cellpadding=5 cellspacing=0 width="75%">
+<tr>
+	<td valign="top">
+		<b>Setting</b>
+	</td>
+	<td valign="top">
+		<b>Function</b>
+	</td>
+</tr>
+
+<tr>
+	<td valign="top">
+		Effect Volume
+	</td>
+	<td valign="top">
+		Sets the overall volume (gain) for the effect
+	</td>
+</tr>
+
+<tr>
+	<td valign="top">
+		Source Volume
+	</td>
+	<td valign="top">
+		Sets the volume of the original audio to mix in the output.  Usually this is zero.
+	</td>
+</tr>
+
+<tr>
+	<td valign="top">
+		Feedback Volume
+	</td>
+	<td valign="top">
+		Sets the feedback volume of the effect.
+	</td>
+</tr>
+
+<tr>
+	<td valign="top">
+		Fixed Delay
+	</td>
+	<td valign="top">
+		Sets the constant delay of the audio.  This is added to the variable delay.
+	</td>
+</tr>
+
+<tr>
+	<td valign="top">
+		Variable Delay
+	</td>
+	<td valign="top">
+		Sets the amount of time to vary the delay.  This is added to the fixed delay.
+	</td>
+</tr>
+
+<tr>
+	<td valign="top">
+		Delay Frequency
+	</td>
+	<td valign="top">
+		Controls how quickly to vary the delay from zero to the variable delay time.
+	</td>
+</tr>
+
+<tr>
+	<td valign="top">
+		Frequency Modulator
+	</td>
+	<td valign="top">
+		Controls the shape of the delay frequency function.  If "Sine" is selected, then the
+		delay will go smoothly from 0 to the variable delay time following a sine wave.
+	</td>
+</tr>
+
+<tr>
+	<td valign="top">
+		Volume Depth
+	</td>
+	<td valign="top">
+		Sets the amount the volume will change.  A value of zero keeps the volume constant.
+	</td>
+</tr>
+
+<tr>
+	<td valign="top">
+		Depth Frequency
+	</td>
+	<td valign="top">
+		Controls how quickly the volume changes.
+	</td>
+</tr>
+
+<tr>
+	<td valign="top">
+		Depth Modulator
+	</td>
+	<td valign="top">
+		Controls the shape of the volume depth frequency function, similar to the frequency modulator above.
+	</td>
+</tr>
+
+</table>
+
+
+<!--_________________________________________________________________________________________________-->
+<hr>
+<h4><a name="Mechanize">Mechanize</a></h4>
+<p>Makes audio sound mechanical or synthetic by multiplying it with a modulation function.
+
+<p>
+<table style="margin-left:20px;font-size:10pt" border="1" cellpadding=5 cellspacing=0 width="75%">
+<tr>
+	<td valign="top">
+		<b>Setting</b>
+	</td>
+	<td valign="top">
+		<b>Function</b>
+	</td>
+</tr>
+
+<tr>
+	<td valign="top">
+		Frequency
+	</td>
+	<td valign="top">
+		Sets the modulation frequency.
+	</td>
+</tr>
+
+<tr>
+	<td valign="top">
+		Modulator
+	</td>
+	<td valign="top">
+		Sets the modulation function.
+	</td>
+</tr>
+
+<tr>
+	<td valign="top">
+		Effect Volume
+	</td>
+	<td valign="top">
+		Sets the overall volume (gain) for the effect
+	</td>
+</tr>
+
+<tr>
+	<td valign="top">
+		Source Volume
+	</td>
+	<td valign="top">
+		Sets the volume of the original audio to mix in the output.  Usually this is zero.
+	</td>
+</tr>
+
+</table>
+
+<!--_________________________________________________________________________________________________-->
+<hr>
+<h4><a name="NoiseReduction">Noise Reduction</a></h4>
+<p>Reduces uniform noise from the audio, such as a hum, buzz, fan noise, etc.  The noise level must be low relative
+to the audio for good results.  High noise levels cannot be removed without artifacts or distortion.  Don't expect
+this effect to magically turn sloppy recordings into high definition audio.
+
+<p>
+<table style="margin-left:20px;font-size:10pt" border="1" cellpadding=5 cellspacing=0 width="75%">
+<tr>
+	<td valign="top">
+		<b>Setting</b>
+	</td>
+	<td valign="top">
+		<b>Function</b>
+	</td>
+</tr>
+
+<tr>
+	<td valign="top">
+		Threshold
+	</td>
+	<td valign="top">
+		Sets the noise level to remove from the audio.  All frequencies below this level are filtered out.
+	</td>
+</tr>
+
+<tr>
+	<td valign="top">
+		Effect Volume
+	</td>
+	<td valign="top">
+		Sets the overall volume (gain) for the effect
+	</td>
+</tr>
+
+<tr>
+	<td valign="top">
+		Source Volume
+	</td>
+	<td valign="top">
+		Sets the volume of the original audio to mix in the output.  Usually this is zero.  Setting this
+		to 100 and the Effect Volume to -100 keeps the noise and removes the audio.
+	</td>
+</tr>
+
+</table>
+
+
+<!--_________________________________________________________________________________________________-->
+<hr>
+<h4><a name="Pan">Pan</a></h4>
+<p>Controls the left/right balance of stereo audio.  For mono audio sections, the channel setup in the
+<a href="OptionsAudio.html">Section Settings</a> must have stereo outputs.
+
+<p>
+<table style="margin-left:20px;font-size:10pt" border="1" cellpadding=5 cellspacing=0 width="75%">
+<tr>
+	<td valign="top">
+		<b>Setting</b>
+	</td>
+	<td valign="top">
+		<b>Function</b>
+	</td>
+</tr>
+
+<tr>
+	<td valign="top">
+		Balance
+	</td>
+	<td valign="top">
+		Sets the left/right balance of the audio.  Full left is -1.0.  Full right is 1.0.
+	</td>
+</tr>
+
+</table>
+
+
+<!--_________________________________________________________________________________________________-->
+<hr>
+<h4><a name="Pitch">Pitch</a></h4>
+<p>Changes the pitch of the audio.  Tempo is preserved.  To change the pitch and the tempo, change the Speed
+setting in <a href="OptionsAudio.html">Section Settings</a>.
+
+<p>
+<table style="margin-left:20px;font-size:10pt" border="1" cellpadding=5 cellspacing=0 width="75%">
+<tr>
+	<td valign="top">
+		<b>Setting</b>
+	</td>
+	<td valign="top">
+		<b>Function</b>
+	</td>
+</tr>
+
+<tr>
+	<td valign="top">
+		Pitch
+	</td>
+	<td valign="top">
+		Sets the relative pitch.  Vales less than 1.0 reduce the pitch.  Values greater than 1.0 increase it.
+	</td>
+</tr>
+
+<tr>
+	<td valign="top">
+		Effect Volume
+	</td>
+	<td valign="top">
+		Sets the overall volume (gain) for the effect
+	</td>
+</tr>
+
+<tr>
+	<td valign="top">
+		Source Volume
+	</td>
+	<td valign="top">
+		Sets the volume of the original audio to mix in the output.  Usually this is zero.  Setting this
+		to 100 and the Effect Volume to -100 keeps the noise and removes the audio.
+	</td>
+</tr>
+
+</table>
+
+<!--_________________________________________________________________________________________________-->
+<hr>
+<h4><a name="Volume">Volume</a></h4>
+<p>Changes the volume of the section.
+
+<p>
+<table style="margin-left:20px;font-size:10pt" border="1" cellpadding=5 cellspacing=0 width="75%">
+<tr>
+	<td valign="top">
+		<b>Setting</b>
+	</td>
+	<td valign="top">
+		<b>Function</b>
+	</td>
+</tr>
+
+<tr>
+	<td valign="top">
+		Volume
+	</td>
+	<td valign="top">
+		Sets the new volume level relative to the original volume.
+	</td>
+</tr>
+
+</table>
+
+
+<div style="height:1000px"></div>
+
+<!--_________________________________________________________________________________________________-->
+<!--
+<hr>
+<h4><a name=""></a></h4>
+<p>
+
+<p>
+<table style="margin-left:20px;font-size:10pt" border="1" cellpadding=5 cellspacing=0 width="75%">
+<tr>
+	<td valign="top">
+		<b>Setting</b>
+	</td>
+	<td valign="top">
+		<b>Function</b>
+	</td>
+</tr>
+
+<tr>
+	<td valign="top">
+		
+	</td>
+	<td valign="top">
+		
+	</td>
+</tr>
+
+</table>
+
+-->
+
+</BODY>
+</HTML>

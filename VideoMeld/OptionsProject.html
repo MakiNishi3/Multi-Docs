@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 4.01//EN">
+<HTML>
+<HEAD>
+<link rel="stylesheet" title="Default" href="style.css">
+<Title>Project Settings</Title>
+</HEAD>
+<BODY>
+
+<H3>Project Settings</H3>
+
+<p class="location">Menu Command: <b>Options | Project Settings</b></p>
+
+<P>Use <B>Project Settings</B> to set the project's aspect ratio, audio channels, and default image
+display time.</P>
+
+<dl>
+<dt>Video aspect ratio
+<dd>Sets the aspect ratio for the video.  The aspect ratio is the ratio of the width to the height of the video.
+A high definition video with a width and height of 1920 by 1080 has an aspect ratio of 16 to 9
+(1920 / 1080 = 1.777... = 16 / 9).  More information is available on
+<a href="http://en.wikipedia.org/wiki/Aspect_ratio(image)">Wikipedia</a>.  All video and images added to
+a project should have the same aspect ratio, otherwise distortion may occur.  Add an Aspect Ratio Correction
+<a hre="EffectEditorVideo.html">video effect</a> to adjust the aspect ratio of a file that does not match
+the project's aspect ratio.
+
+<dt>Audio channels
+<dd>Sets the number of channels to use for the project.  VideoMeld supports mono, stereo, 3.1 channel, 5.1 channel,
+and 7.1 channel arrangements.  You must set this before adding audio sections to the project to ensure that channels
+are mapped appropriately.
+
+<dt>Image display time
+<dd>Sets the default display time for images and overlays.  When adding a large number of images to create
+frames of animation, set this value to the amount of time for each frame.  For example, to add images
+with a frame rate of 20 frames-per-second, set this to 0.05 (1/20).
+</dl>
+
+<dt>Aspect ratio correction
+<dd>Use this setting to automatically correct the aspect ratio for images and videos that differ from the project's
+aspect ratio.  If the project is set to a 16:9 aspect ratio, but the video or image is 4:3, then this feature
+will scale the content to remove any distortion, so things don't look too wide or too thin.  Select "Automatic" to
+allow VideoMeld to add the <a href="VideoEffects.html#AspectRatioCorrection">Aspect Ratio Correction</a>
+effect automatically when a video or image is added.  Select "Manual" to not add the effect.
+</dl>
+
+<P><B>See Also</B><br>
+<a href="OptionsPlayback.html">Playback Settings</a><br>
+
+</BODY>
+</HTML>

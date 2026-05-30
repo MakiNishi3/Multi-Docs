@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 4.01//EN">
+<HTML>
+<HEAD>
+<link rel="stylesheet" title="Default" href="style.css">
+<Title>Points Adjustment</Title>
+</HEAD>
+<BODY>
+
+<H3>Points Adjustment</H3>
+
+<p class="location">Location: Appears after trimming a section using the mouse and the section has fade or effects.</b></p>
+
+<p>Note: Trimming should be done before adding effects or fade points when possible.
+
+<p>After trimming a section, fade and effects may have to be adjusted to fit the new section length.  
+There are several methods that may be used to adjust the points.  Effects and the method to use are listed.
+An example of the currently selected method is illustrated above the list.
+
+<p>VideoMeld selects recommended methods by default for each effect based on the effect range,
+but these should be changed depending on how each effect is being used.
+
+<p><b>Fixed</b><br>
+All points remain at their current time with respect to the beginning of the original file, regardless of what part of
+the file is selected to play.  Use this method if points must remain fixed in time (at a certain video frame, sound,
+or event).  No points are moved and the effect range is not changed.
+
+<p><b>Scaled</b><br>
+The time of all points are scaled to fit within the new section length.  All points within the current section range are
+adjusted as is the effect range.  Use this method for effects that span to the entire section.
+
+<p><b>Moved</b><br>
+All points are moved relative to the trimmed end.  All points retain the same relative
+spacing in time, but are shifted left or right.  Points are deleted if it is move before the beginning of the file.
+The effect range is moved as well.
+Use this method if a section has a fade or transition at the trimmed end,
+but no points at the other end.
+
+<p><b>Ends only</b><br>
+Points at either end that do not overlap the center of the section are retained and have the same spacing
+in time.  The points on the trimmed end are shifted to remain within the section.  When the secton length is reduced,
+any points that cross the center of the section are deleted.  When the section length is increased, points in the
+left half stay on the left and the points on the right half stay on the right.  The effect range is reduced or
+increased as appropriate.  Use this method for sections with fades or transistions on both ends, but no points in the middle.
+
+</BODY>
+</HTML>

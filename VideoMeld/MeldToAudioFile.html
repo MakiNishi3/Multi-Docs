@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 4.01//EN">
+<HTML>
+<HEAD>
+<link rel="stylesheet" title="Default" href="style.css">
+<Title>Meld Project To Audio File Settings</Title>
+</HEAD>
+<BODY>
+
+<H3>Meld Project To Audio File Settings</H3>
+
+<p class="location">Menu Command: <b>File | Meld Project To Audio File</b></p>
+
+<p>Combines all audio sections into a single audio file.  After entering a filename and selecting the audio type to use,
+the following audio settings are presented.
+
+<dl>
+ <dt>Project range
+ <dd>Sets the amount of the project to meld to the file.
+    <dl style="padding-left:20px">
+	<dt>Entire project
+	<dd>The entire project is melded to the file
+	<dt>Selected sections
+	<dd>Only the selected sections are melded to the file
+	<dt>Up to edit marker
+	<dd>The beginning of the project up to the current position of the edit marker is melded to the file.  Set
+		the edit marker before melding.
+	<dt>From the edit marker
+	<dd>The end of the project starting at the current position of the edit marker is melded to the file.  Set
+		the edit marker before melding.
+    </dl>
+	
+ <dt>Quick presets
+ <dd>Provides a drop-down list of commonly used settings and sets the rate, channel, and bitrate filters to match.  This
+	considerably narrows down the number of items in the audio attributes list below.  Some file types support a
+	very limited combination of attributes, so some presets may not list any compatible attributes.  You'll need
+	to select a different preset or select the "Custom..." preset and then use the rate, channel, and bitrate filters
+	below to find compatible attributes.
+
+ <dt>Audio attributes
+ <dd>Lists combinations of attributes supported by file type selected when entering the filename.  Just above the list
+	are three drop-down list boxes for filtering the attributes based on sampling rate, the number of channels, and
+	the bitrate.  If you require a certain sampling rate, number of channels, or bitrate, select those settings
+	from the drop-down list boxes first, then select the attributes from the list.
+
+ <dt>Sampling rate
+ <dd>Sets the sampling rate for certain attributes that support any sampling rate.
+</dl>
+
+<p>The bitrate controls the quality and size of the file.  The higher the bitrate, the better the quality, but the more
+storage/bandwidth required.  Simply multiple the bitrate number by 8 to determine the number
+of number of kilobytes of storage required for each second of audio.  When using an uncompressed or lossless file type, such as
+Wave or FLAC, the bitrate setting is ignored.
+
+<p>A sampling rate of 96000 Hz should not be used unless audio files in the project are of the same high quality.
+Melding with a higher bitrate or sampling rate than the original audio files <b>does not</b> improve quality and only
+wastes storage space and bandwidth.
+
+</BODY>
+</HTML>

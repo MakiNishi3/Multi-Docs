@@ -1,0 +1,208 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 4.01//EN">
+<HTML>
+<HEAD>
+<link rel="stylesheet" title="Default" href="style.css">
+<Title>Getting Started</Title>
+<style type="text/css">
+	span.stip { font-size:10pt;position:absolute;background-color:#FFB;border:solid 1px black;padding:2px }
+</style>
+</HEAD>
+<BODY>
+
+<H3>Getting Started</H3>
+
+<h4>Step 1: The Interface</h4>
+
+<p>Intially VideoMeld displays a single blank
+<a href="IntroElements.html">track</a>.  The screenshot below shows a project with three tracks, one video section, and
+one video section.</p>
+
+<div style="margin-left:100px;position:relative">
+<img style="float:border:none" src="main.png" alt="">
+ <span class="stip" style="top:27px;left:360px">Main Menu</span>
+ <span class="stip" style="top:60px;left:369px">Toolbar</span>
+ <span class="stip" style="top:102px;left:365px">Time Line</span>
+ <span class="stip" style="top:170px;left:-66px">Track Meters</span>
+ <span class="stip" style="top:133px;left:60px">Solo</span>
+ <span class="stip" style="top:159px;left:60px">Mute</span>
+ <span class="stip" style="top:215px;left:52px">Track Volume</span>
+ <span class="stip" style="top:132px;left:251px">Video Section</span>
+ <span class="stip" style="top:185px;left:251px">Video Frames</span>
+ <span class="stip" style="top:250px;left:250px">Audio Section</span>
+ <span class="stip" style="top:305px;left:240px">Audio Waveforms</span>
+ <span class="stip" style="top:200px;left:845px">Master Meters</span>
+ <span class="stip" style="top:226px;left:880px">Master Volume</span>
+ <span class="stip" style="top:410px;left:200px">Section Space</span>
+ <span class="stip" style="top:410px;left:75px;background-color:lime">Playback Marker</span>
+ <span class="stip" style="top:410px;left:315px;background-color:cyan">Edit Marker</span>
+ <span class="stip" style="top:127px;left:631px;background-color:#BDF;border:solid 3px blue">Selection<br>Border</span>
+ <span class="stip" style="top:272px;left:95px;background-color:gray">
+	<span style="color:#0F0">Mute</span><br>
+	<span style="color:#8CF">Settings</span><br>
+	<span style="color:#FF0">Effects</span></span>
+<br><B>Main Window</B>
+</div>
+
+<P>The <a name="TimeLine">Time Line</a> shows the time range of the
+<a href="IntroElements.html">project</a> currently displayed
+in the window.  Clicking the left mouse button on the time line
+moves the edit marker.  If the project is playing, playback jumps to that time.
+
+<P>Track Volume controls the volume for all sections within the track.  Both the Master Volume
+and Track volume apply only to audio <a href="IntroElements.html">sections</a>.</P>
+
+<P>The <a name="Mute">Mute</a> button disables a track so that it is not played or melded.
+Use the mute button to temporarily remove a track from playback.  The Solo button does the opposite.  Only
+one track is played; no other tracks are played or melded.  Use this to
+play or meld one track when working with many tracks.</P>
+
+<P>The <a name="Marker">Edit Marker</a> is used for editing commands and for starting playback at a
+specific time.  Click the left mouse button in the
+time line or right-click the right mouse button on a section and chooose
+<B>Move Marker Here</B> to move the marker.  Also you can drag-and-drop the marker to
+a new position.
+
+<P>Section Space is the area where <a href="IntroElements.html">sections</a>
+are placed on a track.  The <I>selected</I> track and sections
+have a blue border.  All new sections are added to the selected
+track and any editing is performed only on selected sections. You
+can use the left mouse button to select a different track or section.</P>
+
+<h4>Step 2: Setup</h4>
+
+<p>Use <a href="OptionsProject.html">Options | Project Settings</a> to set
+the video aspect ratio and number of audio channels for the project.
+
+<P>Use <a href="OptionsPlayback.html">Options | Playback Settings</a>
+if you have more than one audio device.  Be sure that the device supports the
+number of channels selected for the project.</P>
+
+<h4><a name="Add">Step 3: Adding a File</a></h4>
+
+<P>There are several ways to add a file to a track:<br>
+<ul>
+ <li>Choose an <B>Add</B> command from the <B>Track</B> menu.
+ <li>Choose an add button (Audio, Video, Image, Text) in the toolbar.
+ <li>Click the right mouse button on the track and choose
+	<B>Add File Here</B> from the track context menu.
+ <li>Drag-and-drop files from Windows Explorer.
+</ul>
+
+<p>The position where files are added in the track depends on the method used.
+If the mouse is used (right-click or drag-and-drop), then file are added at the mouse's position and other sections
+are shifted to make room.  If one of the <b>Add</b> commands are used, files are added at the edit marker's position
+if there is enough room.  Otherwise they are added at end of the selected track.  Other sections are not shifted.
+</P>
+
+<P>If you are adding a variety of small and large sections, you may need to
+zoom in or out to get a better view.  See
+<a href="MenuView.html">View Menu</a> for details.</P>
+
+<h4><a name="Select">Step 4: Selecting and Moving Sections</a></h4>
+
+<P>To select a single section, simply click the left mouse button on
+the section.  To select a group of sections, do one of the following:<br>
+<ul>
+ <li>Click-and-drag using the right mouse button to select all
+	the sections within a rectangular area.
+ <li>Hold down the <B>Ctrl</B> key and click the left mouse button
+	on each section to select or unselect it.
+</ul>
+
+<P>Use <B><a href="MenuEdit.html#Link">Link Sections</a></B> to link together a group of sections so that
+when one is selected, all are selected.  Use <B>Unlink Sections</B> to disband a group of linked sections so
+that each section may be selected individually.  To remove just one section from a linked group, use the Link
+icon in the section's title bar.
+
+<P>To move a section, click and hold the left mouse button on a section's title bar
+then drag-and-drop the section to a new time or to a different track.  If
+more than one section is selected, all selected sections are moved as a
+single group, preserving the relative spacing between them.</P>
+
+<P>To move a section to an exact time, right click on a section and choose
+the <a href="EditMove.html">Move</a> command.  
+<a href="EditMove.html">Edit | Move</a>
+does the same thing for the currently selected section.  Note that when
+moving a group of sections, the time is always relative to the left-most
+section.</P>
+
+<h4><a name="Play">Step 5: Playing a Project</a></h4>
+
+<P>The <a href="MenuPlay.html">Play Menu</a> contains a number
+of commands for playing your <a href="IntroElements.html">project</a>.
+If you need to start playback from
+a specific time, click the left mouse button on the time (in the time line)
+and then choose the <B>Play | From Marker</B> command.
+
+<h4>Step 6: Section Settings</h4>
+
+<P>Most sections have settings for the title text and colour.  Some sections have range and speed settings.  Audio
+sections have channel settings.</P>
+
+<P>There are several ways to view settings:<br>
+<ul>
+ <li>Double click the left mouse button on the section.
+ <li>Click the right mouse button on the section and select <B>Settings</B> from the section context menu.
+ <li>Make sure one section is selected, then choose <B>Section Settings</B> from the <B>Options</B> menu.
+ <li>Click the Settings button in the upper left corner of the section.
+</ul>
+
+<h4><a name="Edit">Step 7: Editing Sections</a></h4>
+
+<P>As mentioned above, sections may be moved to any position
+or track by dragging-and-dropping with left mouse button.  If you are dragging a single section
+and there is not enough room for the section at the drop position, all of
+the sections following the drop position will be shifted to the right
+to make room.  If you are dragging a group of sections, you cannot drop them if there is not enough room
+for all sections to fit without moving other sections.</P>
+
+<P>Before using <a href="MenuEdit.html">Edit Menu Commands</a>, make sure
+the correct section is selected and has a blue border.  Some editing commands
+apply only to a single selected section.</P>
+
+<P>You can copy, trim, and split most sections using the
+<a href="MenuEdit.html">Edit Menu</a>.  
+<P>To remove part of a section, move the marker
+to the point where it should be trimmed, then use the appropriate trim command.
+Or you can simply drag the left or right edge of a section to trim it
+or change it's display time.
+
+<P>Use copy and paste to duplicate groups of sections or paste them into a different project.</P>
+
+<P>If a section has to be played in several places on several different
+tracks, you can make copies of the section and drag-and-drop them to
+a new position or track.</P>
+
+<P>To insert a section in the middle of another section or
+to move part of a section, move the
+marker to the dividing point and use <b>Edit | Split</b>.</P>
+
+<P>Effects can be applied to a section using the <a href="MenuEffect.html">Effect Menu</a>.</P>
+
+<P>VideoMeld does not modify any of the original files.
+All editing and effects are performed realtime (on-the-fly) during
+playback.</P>
+
+<h4><a name="Save">Step 8: Saving a Project</a></h4>
+
+<P>Use <a href="MenuFile.html#Save">File | Save</a> to save the project.
+Note that changing, moving, or deleting any of the files used within the project changes the way the project
+plays the next time you open it.</P>
+
+<P>Use <a href="MeldToAudioFile.html">File | Meld Project To Audio File</a> to combine
+all audio sections and tracks into a single audio file.  The file can
+then be played by other audio software or burned onto a CD.
+
+<P>Use <a href="MeldToVideoFile.html">File | Meld Project To Video File</a> to combine
+all sections and tracks into a single video file.</P>
+
+<P>If your computer is not fast enough to play all the tracks, use
+<B>Meld Project To ...</B> to combine several tracks into one.  By
+muting all the tracks you do not want to save, you can combine the
+remaining tracks into one file.  Add the file to the project to
+to replace the tracks and reduce the processing require during playback.</P>
+
+<div style="height:250px"></div>
+
+</BODY>
+</HTML>

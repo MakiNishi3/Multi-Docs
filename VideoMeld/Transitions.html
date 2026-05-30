@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 4.01//EN">
+<HTML>
+<HEAD>
+<link rel="stylesheet" title="Default" href="style.css">
+<Title>Transitions</Title>
+</HEAD>
+<BODY>
+
+<H3>Transitions</H3>
+
+<P>Transition effects gradually change from one video or image to another or blends them in unusual ways.
+The most common transition is a <a href="CrossfadeVideo.html">crossfade</a>, which VideoMeld supports
+directly through the <a href="MenuEffect.html#FadeGraph">Fade Graph</a>.  For other transitions, such as wipes,
+dissolves, slides, etc., a transition effect needs to be added to the beginning or end of a video section.  The steps below explain
+how to a transition between two videos.  Transition may be added on Image, Caption, and Overlay sections as well.
+
+<p>Step-by-step transition from Video 1 to Video 2:
+<ol>
+ <li>Use <b>Track | Add Video</b> to add Video 1 to Track 1.
+ <li>Use <b>Track | Add Track</b> to create a new track.
+ <li>Use <b>Track | Add Video</b> to add Video 2 to Track 2.
+ <li>Drag Video 2 to a position so that it starts about 2 seconds before the end of Video 1 (see below).
+ <li>Drag-and-drop a transition effect from the <a href="EffectBar.html">Effect Toolbar</a> to the beginning of
+	Video 2.
+</ol>
+
+<p style="margin-bottom:0">Notes:
+<ul>
+	<li>
+	If <a href="VideoEffects.html#AspectRatioCorrection">Aspect Ratio Correction</a> is required, the "Border" setting must
+	be set to "Black" to prevent the back layer from appearing in the borders.
+	<li>
+	The <a href="MenuEffect.html#FadeGraph">Fade Graph</a> should be at maximum (no fades) for the duration of
+	the transition in <b>both</b> sections.
+	<li>
+	If either section is moved or trimmed later, the effect range must be adjusted or removed manually
+	using the <a href="EffectEditorVideo.html">Video Effects Editor</a>.  Both sections must be moved
+	together to maintain the aligned transition.
+</ul>
+
+<p><img style="border:none;margin:20px" src="transitions.png" alt="Transitions Figure" >
+
+<P><B>See Also</B><br>
+<a href="IntroStart.html">Getting Started</a><br>
+<a href="CrossfadeVideo.html">Crossfade Video</a><br>
+
+</BODY>
+</HTML>

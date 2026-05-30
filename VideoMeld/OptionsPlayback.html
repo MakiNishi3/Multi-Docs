@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 4.01//EN">
+<HTML>
+<HEAD>
+<link rel="stylesheet" title="Default" href="style.css">
+<Title>Playback Settings</Title>
+</HEAD>
+<BODY>
+
+<H3>Playback Settings</H3>
+
+<p class="location">Menu Command: <b>Options | Playback Settings</b></p>
+
+<P>Use <B>Playback Settings</B> to set the audio playback device and video quality when a project
+is played in VideoMeld.</P>
+
+<dl>
+<dt>Playback device
+<dd>If your computer has more than one audio playback device installed, you can select
+a specific device from the list.  Select a device
+that supports the number of channels required for the project, as set under
+<a href="OptionsProject.html">Project Settings</a>.</P>
+
+<dt>Video preview quality
+<dd>Sets the height in pixels of the video when played in VideMeld.  The width of the video
+is calcualted automatically based on the aspect ratio in
+<a href="OptionsProject.html">Project Settings</a>.  Using large values requires significant
+processing power and may cause the video to play at a lower, inconsistant frame rate.  This setting
+only affects playback within VideoMeld.  When a project is <a href="MeldToVideoFile.html">melding</a>
+to a video file, a different frame rate and resolution may be used.
+
+<dt>Frame rate
+<dd>Sets the number of frames per
+second for video playback in VideoMeld.  Frames may be dropped if your computer is not
+fast enough to process all the frames in realtime.  Frames
+are not dropped when <a href="MeldToVideoFile.html">melding</a> to a video file.
+
+<dt>Screen
+<dd>Sets the preview screen to one of the following:
+<ul>
+<!-- ><b>Integrated</b>: The screen is integrated into the main window and appears only during playback.  Clicking on the
+playback screen causes it become a separate window.-->
+<li><b>Window</b>: The screen is contained in a separate window.
+<li><b>Docked</b>: The screen is minimized to a thumbnail in the toolbar next to the Effects bar.  Clicking on thumbnail
+restores the screen back to a separate window.
+</ul>
+
+<dt>Image section quality
+<dd>Sets the maximum height in pixels of image sections played in VideMeld.  High resolution photographs require an
+enormous amount of memory and processing power.  This setting reduce the resources required to preview the project,
+giving a smoother frame rate.  The reduced resolution will not be noticeable unless an
+effect is used to zoom in on part of the image (Crop/Pan/Zoom, Rotate/Scale, etc.).  Full resolution is used when
+<a href="MeldToVideoFile.html">melding</a> to a video file.
+
+<dt>Time counter
+<dd>Sets the format for the preview elapsed time display.  "None" hides the elapsed time.
+The time counter is shown during preview only and will not be displayed when melding the project to a file.
+
+<dt>Lazy preview
+<dd>Skips frames that take too long to load.  The skipped frames may be blank or the previous frame may be used instead.
+This improves the overall preview frame rate and makes it faster to start and stop previewing, but the frames shown may
+be delayed or blank.  Frames are never skipped when <a href="MeldToVideoFile.html">melding</a>.
+
+</dl>
+
+<P><B>See Also</B><br>
+<a href="OptionsProject.html">Project Settings</a><br>
+
+</BODY>
+</HTML>

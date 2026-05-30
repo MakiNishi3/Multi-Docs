@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 4.01//EN">
+<HTML>
+<HEAD>
+<link rel="stylesheet" title="Default" href="style.css">
+<Title>Effect Menu Commands</Title>
+</HEAD>
+<BODY>
+
+<H3>Effect Menu Commands</H3>
+
+<P><b>Add Or Modify</b><br>
+Displays the effect editor window where effects can be added for the primary selected section, removed, or modified.
+
+<P><b><a href="EffectBar.html">Effect Toolbar</a></b><br>
+Shows or hides the effect toolbar.
+
+<P><b><a name="FadeGraph">Fade Graph</a></b><br>
+Displays a fade setting graph within all sections.  The fade graph sets the opacity of video sections
+and the volume of audio sections.
+
+<P><b>Setting Graph</b><br>
+Displays the selected setting graph within all sections having that setting.  Use <b>Select Graph Setting</b> above
+to select the setting to use.
+
+<P><b><a href="EffectSettingList.html">Select Graph Setting</a></b><br>
+Displays a list of all variable effect settings currently in use and allows the selection of one setting
+to graph within sections.
+
+<P><b>Preset Graphs</b><br>
+Displays a submenu listing basic, predefined graphs for quickly adjusting a setting graph.
+
+<p><b><a name="CrossfadeSections">Crossfade Sections</a></b><br>
+Sets the <a href="#FadeGraph">Fade Graph</a> for selected sections that overlap in time so that the overlapping
+end of one section is faded out and the overlapping beginning of the other section is faded in.
+<b>All Fade Graph points are reset and adjusted.</b>  If multiple sections overlap in time, then only the
+section in the closest track is used to set the fade curve.
+
+<div style="text-align:center">
+<img style="margin:auto;display:block;padding:10px" src="Crossfade.png" alt="Crossfade">
+<b>Crossfade Example</b>
+</div>
+
+<P><b>Copy Effects</b><br>
+Copy all effects in a single section to the clipboard.  If more than one section is selected, the effect are copied from
+the primary selected section.
+
+<P><b>Paste Effects</b><br>
+Replaces all the effects in the selected sections with compatible effects in the clipboard.  More than one section may be
+selected to paste the same effects to all sections at once.  Any effects currently in the sections are removed.
+
+<P><b>Append Effects</b><br>
+Adds the effects in the clipboard to all compatible selected sections.  More than one section may be
+selected to add the same effects to all sections at once.  Effects currently in the sections are not affected.
+
+<P><B>See Also</B><br>
+<a href="EffectEditorVideo.html">Video Effects Editor</a><br>
+<a href="EffectEditorAudio.html">Audio Effects Editor</a><br>
+<a href="IntroStart.html">Getting Started</a><br>
+
+</BODY>
+</HTML>

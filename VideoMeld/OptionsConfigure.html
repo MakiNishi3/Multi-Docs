@@ -1,0 +1,72 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 4.01//EN">
+<HTML>
+<HEAD>
+<link rel="stylesheet" title="Default" href="style.css">
+<Title>Configure VideoMeld</Title>
+</HEAD>
+<BODY>
+
+<H3>Configure VideoMeld</H3>
+
+<p class="location">Menu Command: <b>Options | Configure VideoMeld</b></p>
+
+<P>Use these settings to avoid compatibility problems.  Some DirectX drivers cause floating point errors
+or other exceptions.
+
+<dl>
+<dt>Window scheme
+<dd>Sets the colour and appearance of the program.
+
+<dt>Mouse wheel
+<dd>Sets the function of the mouse wheel.  The wheel can be used to
+zoom in or out, scroll tracks vertically, or scroll time horizontally.  Select function to use from the drop down list.
+
+<dt>Mouse render
+<dd>Sets areas for preview rendering when the mouse is moved.
+<ul>
+	<li>None: no rendering is performed when the mouse is moved.
+	<li>Time line: full rendering is performed when the mouse is moved in the time line area just above the tracks.
+	<li>Time line and sections: same as above and section rendering
+is perform when the mouse is moved in a section.  Holding the Ctrl key causes rendering of all tracks up to the track the
+section is in rather than just the section alone.  A fast system with an SSD drive is recommended for this setting.
+</ul>
+
+<dt>Audio editor
+<dd>Sets the program to use for editing an audio file contained in an audio section.  Use <b>Edit | Open In Editor</b>
+to open the section's file for editing.
+
+<dt>Video file cache size
+<dd>Sets the number of video files to keep open.  Keeping video files opened speeds up processing, screen updates (timeline scrolling),
+and playback, but uses more memory.  Caching 5 HD videos requires about 1GB of memory.
+
+<dt>FFmpeg/Libav folder
+<dd>Sets the folder where FFmpeg/Libav modules are located.  Please note that GoldWave Inc. does not provide
+support for FFmpeg/Libav issues.  The <b>Download</b> button
+downloads and installs a copy of the LGPL version of the Libav modules.  The <b>Download</b> button is disabled if
+decoders are already installed.  To reinstall the decoders, clear the folder and restart VideoMeld.
+
+<p>See <a href="FFmpeg.html">Using FFmpeg Modules</a>
+for details and legal requirements.
+
+<dt>DirectX software emulation mode
+<dd>Avoids the DirectX driver and uses the standard Windows Advanced Rasterization Platform (WARP).  This
+avoids a lot of problems with unstable and unreliable DirectX drivers (which unfortunately most are).
+You must restart VideoMeld when changing this setting.  This option may be slower than using the driver, but
+is significantly more stable on many systems.
+
+<!-- dt>Try QuickTime decoders first
+<dd>If QuickTime is installed, VideoMeld will attempt to open a video file using QuickTime decoders before using
+Windows decoders.  QuickTime decoders can open iPhone videos in the correct orientation, eliminating the need to
+rotate the video.  This option is not available in the 64 bit version of VideoMeld. -->
+
+<dt>Ignore math errors
+<dd>Ignores division-by-zero errors caused by faulty DirectX drivers.
+
+<dt>Always ask for aspect ratio for a new project
+<dd>Shows a prompt for an aspect ratio when a new project is created.  If unchecked the last used aspect ratio is assumed by default.
+
+
+</dl>
+
+</BODY>
+</HTML>

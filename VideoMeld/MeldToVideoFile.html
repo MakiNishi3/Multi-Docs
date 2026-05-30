@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 4.01//EN">
+<HTML>
+<HEAD>
+<link rel="stylesheet" title="Default" href="style.css">
+<Title>Meld Project To Video File Settings</Title>
+</HEAD>
+<BODY>
+
+<H3>Meld Project To Video File Settings</H3>
+
+<p class="location">Menu Command: <b>File | Meld Project To Video File</b></p>
+
+<p>Combines all audio and video sections into a single video file.  After entering a filename and selecting
+the video type to use, the following video and audio settings are presented.
+
+<p>When creating uploads for YouTube or Vimeo, the MPEG 4 file type is recommended.  However the Windows Media Video 
+file type supports higher quality video due to limits in the MPEG 4 encoders included with Windows, so it is better
+for offline storage.
+
+<p>The Animated PNG format is recommended only for creating brief website animation with transparency.  Use low resolutions and frame
+rates.  The duration of the file should be less than a minute.  Otherwise the size of the file will be far too large to be useful.
+
+<dl>
+ <dt>Project range
+ <dd>Sets the amount of the project to meld to the file.
+    <dl style="padding-left:20px">
+	<dt>Entire project
+	<dd>The entire project is melded to the file
+	<dt>Selected sections
+	<dd>Only the selected sections are melded to the file
+	<dt>Up to edit marker
+	<dd>The beginning of the project up to the current position of the edit marker is melded to the file.  Set
+		the edit marker before melding.
+	<dt>From the edit marker
+	<dd>The end of the project starting at the current position of the edit marker is melded to the file.  Set
+		the edit marker before melding.
+    </dl>
+
+ <dt>Quick presets
+ <dd>Provides a drop-down list of commonly used settings.  Some file types support a
+	very limited combination of settings, so some presets may not be fully supported.  The closest matching
+	settings are selected.  When saving as MP4 video, for example, the audio encoder included
+	with Windows supports only 1 or 2 channels and only bitrates of 192kHz and below.  Be sure to check all the
+	settings after selecting a preset.
+
+ <dt>Video settings</b>
+ <dd>Sets video encoding attributes.
+
+ <dl style="padding-left:20px">
+  <dt>Resolution
+  <dd>Sets the horizontal and vertical size in pixels of each frame in the video.  For HD video, use a resolution
+	of 1920 x 1080.  For Internet video, a lower resolution should be used to reduce download size or
+	streaming bandwidth.
+
+  <dt>Maintain aspect ratio by
+  <dd>Lists different methods to preserve the aspect ratio of the video if the resolution aspect ratio doesn't match
+	the project's set under <a href="OptionsProject.html">Options | Project</a>.
+	<ul>
+	<li>Off (stretch) - No aspect ratio adjustments.  The video is stretched to fit the given resolution.  Round
+		or square objects may appear oval or rectangular in the melded video.
+	<li>Letterbox - Uses black horizontal rows at the top and bottom or vertical columns (pillars)
+		on the left and right sides of the video to preserve the aspect ratio.
+	<li>Crop - Trims the sides or top and bottom of the video to fit it in the given resolution.  Anything in the trimmed
+		regions will not be visible in the melded video.
+	</ul>
+
+  <dt>Video frame rate
+  <dd>Sets the frame rate of the video in frames-per-second.  A lower frame rate requires less storage and bandwidth, but the
+	video may appear less fluid or smooth.
+  <dt>Video bitrate
+  <dd>Sets the quality and size of the video.  Bitrates around 5,000 to 10,000 kbps give good quality for high resolution
+	videos.  Use higher bitrates for HD quality.  To make smaller files, reduce the resolution to 360p or lower and set the
+	bitrate to under 5,000 kbps.
+ </dl>
+
+<dt>Audio settings
+<dd>Sets audio encoding attributes.
+ <dl style="padding-left:20px">
+  <dt>Channels
+  <dd>Sets the number of channels in the melded file.  Select "None" to create a video only file.  Not all file formats
+	support all combinations of channels.  MP4 video supports only mono and stereo encoding.
+  <dt>Sampling rate
+  <dd>Sets the sampling rate.
+
+  <dt>Audio bitrate
+  <dd>Sets the quality of the audio in kilobits-per-second.  Higher bitrates generally give higher quality, but require more storage.
+ </dl>	
+
+<dt>Play video when finished
+<dd>Plays the video using the computer's default video playback program.
+
+</dl>	
+
+</BODY>
+</HTML>

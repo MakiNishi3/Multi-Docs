@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 4.01//EN">
+<HTML>
+<HEAD>
+<link rel="stylesheet" title="Default" href="style.css">
+<Title>Synchronization</Title>
+</HEAD>
+<BODY>
+
+<H3>Synchronization</H3>
+
+<p>If audio and video synchronization is always off by a consistent amount (constant lag), simply move the audio
+or video section slightly to align it better.  If synchronization is off by a random amount depending
+on where you start playback, the file format may need to be changed.
+
+<p>Some variable bitrate (VBR) encoded files cannot be synchronized accurately and have to be decoded internally (buffered).
+If many VBR files or some large VBR files are added to a project, an excessive amount of computer memory will be used, adversely
+affecting system performance.  Therefore variable bitrate files should be avoided.
+
+<p>You can use VideoMeld to convert a VBR file to a constant bitrate.
+<p>For audio files:
+<ol>
+	<li> Choose the audio section.
+	<li> Use <b>Options | Section</b>.
+	<li> Choose the "Decode Audio To Wave File" button to replace the VBR file.
+</ol>
+
+<p>For video files:
+<ol>
+	<li> Use <b>File | New</b> to create a new project.
+	<li> Use <b>Track | Add Video</b> to add the file to the project.
+	<li> Do not trim the file.
+	<li> Use <b>File | Meld Project To Video File</b> to save the project to a file.
+	<li> Select constant bitrate settings only (no VBR).
+	<li> Use that new file for editing in VideoMeld.
+</ol>
+
+<p>Other software such as <a href="http://www.goldwave.com">GoldWave</a> may be used to batch convert many files, if required.
+
+</BODY>
+</HTML>

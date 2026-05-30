@@ -1,0 +1,23 @@
+h3 { font-size:20px }
+h4 { font-size:15px }
+ol { margin-top:0 }
+ul { margin-top:0 }
+td { vertical-align:top }
+th { text-align:left }
+hr { margin-top:2em;margin-bottom:2em }
+p.location { background-color:#D0FFD0 }
+tt { font-weight:bold; font-family: Arial, "Sans-Serif", Tahoma; }
+div.in { margin-left:30px; margin-top:0 }
+a.external { text-decoration:underline; color:blue; cursor:hand; }
+body { font-family: Arial, "Sans-Serif", Tahoma; font-size:11pt; margin-top:5px; }
+dt { font-weight:bold;padding-top:10px}
+dd { margin-left:15px; }
+img.btn
+{
+	vertical-align:middle;
+	background:#EEE;
+	border-top:solid 1px #EEE;border-left:solid 1px #EEE;
+	border-right:solid 1px #888;border-bottom:solid 1px #888;
+	margin-top:2px;margin-bottom:2px;
+}
+

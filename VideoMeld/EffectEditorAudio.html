@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 4.01//EN">
+<HTML>
+<HEAD>
+<link rel="stylesheet" title="Default" href="style.css">
+<Title>Audio Effects Editor</Title>
+</HEAD>
+<BODY>
+
+<H3>Audio Effects Editor</H3>
+
+<p class="location">Menu Command: <b>Effect | Add Or Modify</b> (with one audio section selected)</p>
+
+<P>The Audio Effects Editor displays a list of active audio effects, a list of settings for the selected
+effect, and a graph for adjusting a setting over time.  Use audio effects to:
+<ul>
+<li>Compress, limit, or expand the dynamic range
+<li>Adjust the equalization
+<li>Apply special effects such as Flanger and Mechanize
+<li>Reduce background noise
+<li>Raise or lower the pitch without affecting the tempo
+<li>Adjust the volume or fade the audio in and out
+</ul>
+
+<p><b>Effects</b><br>
+Use the Add Effect [+*] button
+to display a list of available effects.  After selecting an effect, settings are listed.
+Check or uncheck the effect to see how the audio sounds with or without the effect.
+
+<p>Effects are processed in the order they appear.  Use the up/down buttons to change the order of effects.
+
+<p><b>Settings</b><br>
+After adding an effect, all settings for that effect are listed.  Above the settings, preset settings
+are provided in a drop-down list.  You may select presets from the list and add new presets to the list.
+
+<p>See <a href="AudioEffects.html">Audio Effects</a> for details on effects.
+
+<p>All effects have an "Effect range" to control when then effect starts and finishes within the video.  All times are
+file based.  Time 0 is the beginning of the file and time 10.0, for example, is ten seconds
+into the file.  If the section has been trimmed or it's To/From range has changed, the times are still based
+on the very beginning of the file, not the trimmed point at which playback starts.  The Start and Finish
+times may be anchored relative to the section's From and To range.
+<ul>
+	<li>None: the effect range doesn't change if the section range changes.  Use this for effects that must remain
+		on certain frames in the file.
+	<li>From: the effect range changes relative to the section's From range.  Set Start and Finish to this for effects
+		that must remain at the beginning of the section, such as a fade in.
+	<li>To: the effect range changes relative to the section's To range.  Set Start and Finish to this for effects
+		that must remain at the end of the section, such as a fade out.
+</ul>
+
+<p>Some effects have settings that can be either constant or variable.  Choose the Var button next to a setting to allow
+it to vary over time.  Click on the graph to change the setting at any time.
+
+<p><b>Point settings</b><br>
+Use these settings to change a point's time, curve, and anchor.  The lines connecting points may have a linear shape
+or a curved (spline) shape.  Curved shapes smooth out changes from one point to the next, which may sound more natural.
+The anchor determines how the point's position in time changes if the effect range changes either
+directly or indirectly through section range changes (see Start and Finish anchors above).
+<ul>
+	<li>None: the point's time does not change if the effect range changes.  Use this for effect points that must occur
+		at certain frames in the video.
+	<li>Start: the point's time is relative to the Start time and changes if Start changes.  Use this for fade ins.
+	<li>Finish: the point's time is relative to the Start time and changes if Start changes.
+	<li>Scaled: the point's time is scaled based on the overall relative effect range change.  If a point is set at a time
+		that is 25% of the way between the Start and Finish range, then after the effect range is changed, the
+		point will still be 25% of the way between the new range.
+</ul>
+
+<p><b>Defaults</b><br>
+Sets the default curve and anchor to use for all new points.
+
+<p><b>f(x)</b><br>
+Displays the <a href="GraphGenerator.html">Graph Generator</a> window where the shape of the graph can be set based on
+mathematical functions.
+
+
+<p><b>Grid overlay</b><br>
+Displays a grid over the graph window.
+
+<p><b>Preview Buttons</b><br>
+Plays the audio or seeks backward or forward.
+
+<p><b>See Also</b><br>
+<a href="Presets.html">Presets</a>
+
+</BODY>
+</HTML>

@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 4.01//EN">
+<HTML>
+<HEAD>
+<link rel="stylesheet" title="Default" href="style.css">
+<Title>Using FFmpeg Modules</Title>
+</HEAD>
+<BODY>
+
+<H3>Using FFmpeg Modules</H3>
+
+<p><a href="http://ffmpeg.org">FFmpeg</a> is a separate multimedia framework.  It includes
+<b>avcodec</b> and <b>avformat</b> modules, which handle many audio and video files formats such as MPEG-2, AC3, VOB,
+and more.  Configuring VideoMeld to use FFmpeg modules greatly increases the number of file formats VideoMeld can open.
+
+<p>Due to patent and licensing issues, FFmpeg modules cannot be included with VideoMeld or even hosted
+on the website.  
+<b>Please do not contact GoldWave Inc. to request copies of the modules.</b>
+The modules have to be downloaded and installed separately.  See legal requirements below.
+Please avoid using patented audio and video formats when possible.  Use <a href="http://opus-codec.org">Opus</a>
+or <a href="http://xiph.org/flac">FLAC</a> for audio.
+
+
+<H4>VideoMeld Requirements</H4>
+
+<p>VideoMeld requires version 2 of the FFmpeg or Libav modules (Windows <b>64 bit</b> DLLs).  Specifically
+VideoMeld requires the following files:
+<pre>
+	avcodec-56.dll
+	avformat-56.dll
+	avutil-54.dll
+	swresample-2.dll  or  avresample-1.dll
+	swscale-3.dll
+</pre>
+
+To use FFmpeg (or Libav) in VideoMeld, simply use <a href="OptionsConfigure.html">Options | Configure</a>
+to set the folder where the files are located on the computer or use the <b>Download</b> button to automatically
+download and install the Libav LGPL version of the modules.
+
+<H4>Legal Requirements</H4>
+
+<p><b>GPL</b>:<br>
+Since VideoMeld is a closed source program, only LGPL versions of the modules may be used.  Using GPL versions, such as the 
+<a href="http://ffmpeg.zeranoe.com/builds/">Shared Zeranoe FFmpeg Build</a> or
+<a href="http://win32.libav.org/win32">Libav Win32 Build</a> is not permitted under GPL.
+At the Zaranoe site you can request a LGPL version (for a fee) or you can search the Internet
+for other alternatives, provided they have the above files.  Always follow safe practices when downloading files from
+the Internet.
+
+<p><b>Patents</b>:<br>
+<b>VideoMeld does not include any patent licenses</b> not already covered
+by the operating system
+(see <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/dd757927(v=vs.85).aspx">formats covered in Windows 7 or later</a>,
+which includes AAC, H.264, and others).
+Depending on the kind audio or video being decoded, additional patent licenses may be required.
+Anyone installing the above modules to use formats not directly handled by VideoMeld are responsible for ensuring
+they meet all third-party patent license requirements of those formats.
+
+<p>Given the number of patents and the complex jurisdictional issues, GoldWave Inc. cannot answer questions related to patents.
+
+</BODY>
+</HTML>

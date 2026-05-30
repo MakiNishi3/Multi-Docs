@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 4.01//EN">
+<HTML>
+<HEAD>
+<link rel="stylesheet" title="Default" href="style.css">
+<style>td {border:solid 1px black}</style>
+<TITLE>Command Line Parameters</TITLE>
+</HEAD>
+
+<BODY>
+
+<h3>Command Line Parameters</h3>
+
+<p>
+<table style="border:solid 1px black;font-size:10pt" cellpadding=3 cellspacing=0 width="600">
+<tr>
+<td valign="top" width="100px"><b>Parameter</b></td>
+<td valign="top"><b>Purpose</b></td></tr>
+<tr>
+	<td valign="top">
+	-d2d
+	</td>
+	<td valign="top">
+	Uses Direct2D software mode for graphics instead of hardware Direct2D (if driver is not found).
+	Direct2D gives smoother scrolling and resizing than GDI, which cannot draw bitmaps on fractional coordinates.
+	</td>
+</tr>
+<tr>
+	<td valign="top">
+	-gdi
+	</td>
+	<td valign="top">
+	Force GDI+ for graphics instead of hardware Direct2D.  Typically this is much slower, but may be required
+	if video problems occur on your computer.
+	</td>
+</tr>
+</table>
+
+</BODY>
+</HTML>
