@@ -1,0 +1,266 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+<!--
+$Id: releasenotes.htm,v 1.21 2015/03/31 02:59:44 ianb1957 Exp $ 
+-->
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <title>Release Notes v2.60</title>
+   <link rel="stylesheet" type="text/css" href="../avisynth.css">
+</head>
+<body>
+<h2>
+AviSynth 2.60</h2>
+<h3>Summary of changelist (with respect to v2.58)</h3>
+<ul>
+  <li>TCPDeliver, 2.6 plugin, support all pixel types. (Wilbert)</li>
+  <li>AviSource: added multiple video and audio track support.</li>
+  <li>Add current dwAvail{Phys, Virtual} to out of memory error message.</li>
+  <li>DirectShowSource support negotiation of non-standard MediaSubTypes "I420", "NV12", "YV24" and "YV16".</li>
+  <li>AviSource and DirectShowSource support '+' prefix on pixel_type to handle bad padded planar data.</li>
+  <li>Added Eval(clip, string name, string) alias for oop processing of argument.</li>
+  <li>Info: Audio only clip now creates its own canvas video.</li>
+  <li>AviSource: Include -ve biHeight logic for compressed input.</li>
+  <li>Add Script Functions :- BitLRotate, BitRRotate, BitChange, BitClear,
+     BitSet, BitTest and their asm aliases.</li>
+  <li>Add WeaveRows (blit cost) and WeaveColumns (slow) frame combining filters.</li>
+  <li>Add AudioDuration() [as float seconds], IsY8(), IsYV411() &amp; PixelType()
+     [as a string] script functions.</li>
+  <li>Add Echo and Preroll filters.</li>
+  <li>DirectShowSource, 2.6 plugin, support pixel types "AYUV" as YV24, "Y41P"
+     and "Y411" as YV411.</li>
+  <li>AviSource: Add Full and Auto pseudo pixel_types. Full is all supported.
+     Auto is YV12, YUY2, RGB32, RGB24 &amp; Y8.</li>
+  <li>Add "AudioLengthS" [as a string], "Ord" &amp; "FillStr" script functions.</li>
+  <li>Add AudioTrim(clip, float, float) audio priority trimming, args in fractional seconds.</li>
+  <li>Add Trim(M, Length=N[, Pad=False]) and Trim(M, End=N[, Pad=False]) function overloads
+      for explicit Trimming. Length=0 means zero frame clip. End=0 means end at frame 0.</li>
+  <li>Add SeparateRows (zero cost) and SeparateColumns (slow) frame slashing filters.</li>
+  <li>Add Script Functions :- Acos, Asin, Atan, Atan2, Cosh, Sinh, Tanh, Fmod,
+      Log10, BitLShift, BitRShiftS, BitRShiftU and Hex.</li>
+  <li>Add "ConditionalSelect","csc+[show]b" runtime filter.</li>
+  <li>Add dither option to Levels, RGBAdjust &amp; Tweak.</li>
+  <li>Add BitAnd(), BitNot(), BitOr() &amp; BitXor() script functions.</li>
+  <li>Add StrCmp() &amp; StrCmpI() script functions.</li>
+  <li>Add YV24 support for Limiter show option.</li>
+  <li>Add "Global OPT_dwChannelMask={int}"</li>
+  <li>Add 0x0063F speaker mask for 7.1 WAVE_FORMAT_EXTENSIBLE.</li>
+  <li>ImageWriter, add support for printf formating of filename string,
+     default is ("%06d.%s", n, ext);</li>
+  <li>Add ScriptName(), ScriptFile(), ScriptDir() functions (WarpEnterprises).</li>
+  <li>Add SkewRows filter.</li>
+  <li>Histogram, Levels mode, Improve colour of chroma legends.</li>
+  <li>ConditionalFilter, teach about string results.</li>
+  <li>Add ImageSourceAnim (Wilbert)</li>
+  <li>Add YV24 mode to ColorBars.</li>
+  <li>Add ColorBarsHD based on arib_std_b28.</li>
+  <li>Add Undefined(), AudioLengthLo(), AudioLengthHi(), IsYV16() &amp; IsYV24() script functions</li>
+  <li>Allow newlines (and hence comments) before '{' -- Gavino</li>
+  <li>Added Histogram, population clamp&nbsp;% factor for "Levels" mode,</li>
+  <li>AviSource: Support fourcc "GREY" as Y8</li>
+  <li>Added "Global OPT_VDubPlanarHack=True" to flip YV24 and YV16 chroma planes for old VDub's.</li>
+  <li>Added "Global OPT_AVIPadScanlines=True" option for naughty DWORD aligned planar padding</li>
+  <li>Added Matrix="AVERAGE" mode.</li>
+  <li>Added ContinuedDenominator/ContinuedNumerator(f[]i[limit]i) script functions.</li>
+  <li>Added ChromaInPlacement, ChromaOutPlacement and ChromaResample options to planar colour conversions.</li>
+  <li>Added MaskHS.</li>
+  <li>Add Y8 for DevIL, planarize EBMP.</li>
+  <li>Planar support for many filters.</li>
+  <li>Added Info() time indicator on audio length and video (current frame &amp; total). (2.5.8)</li>
+  <li>Added UtoY8 and VtoY8.</li>
+  <li>ColorYUV: Added all adjustment parameters as conditional variables
+    "coloryuv_SETTING". Enable by setting conditional=true.</li>
+  <li>ConditionalReader: Added support for type String.</li>
+  <li>ConditionalReader: Added offset keyword to offset all frame numbers after the keyword.</li>
+  <li>Added SincResize() with optional taps parameter (default is 4).</li>
+  <li>Added Custom band setting to SuperEQ to allow all 16 bands to be set from
+    script. Usage: SuperEQ(clip,band1, band2, band3....) values are dB in float.</li>
+  <li>Added fast 0-1-0 kernel for YV24 to ConvertBacktoYUY2().</li>
+  <li>Added core formats: YV24, YV16, Y8, YV411.</li>
+</ul>
+<ul>
+  <li>Fixed VideoInfo::Is property to reference image_type (not pixel_type).</li>
+  <li>Fixed YV12 Blur C code skiping left column.</li>
+  <li>Fixed frame range clamping in ComparePlane (ultim).</li>
+  <li>Fixed posible leak with realloc in ConditionalReader (ultim).</li>
+  <li>Fixed posible double free in text-overlay (ultim).</li>
+  <li>Fixed AVISource "AUTO" and "FULL" handling.</li>
+  <li>Fixed ImageSource handling of missing ebmp files.</li>
+  <li>Fixed HexValue parsing values greater than 7FFFFFFF, now as unsigned hex.</li>
+  <li>Fixed ConditionalReader memory overrun parsing bools.</li>
+  <li>Fixed ResampleAudio NOP test to compare vi.num_audio_samples, not sample rate.</li>
+  <li>Fixed RGB24 AddBorders with right=0.</li>
+  <li>Fixed conditional_functions error message names (Wilbert).</li>
+  <li>Fixed ImageSource deal with add 1 to IL_NUM_IMAGES bug (Wilbert)</li>
+  <li>Fixed ImageReader upside down TIFF in 178 DevIL. (Wilbert)</li>
+  <li>Fixed string+string bug when total length is 4096*K-1.</li>
+  <li>Fixed SincResize misuse of "int abs(int)" (Gavino).</li>
+  <li>Fixed Lanczos and Blackman sinc use of float == 0.0, use small limit "&gt; 0.000001".</li>
+  <li>Fixed Classic mode legend drawing for planar right limit and yuy2 centre line.</li>
+  <li>Fixed Crop limit tests for RGB.</li>
+  <li>Fixed Overlay yellow tint on rec601 RGB import conversion.</li>
+  <li>Fixed Levels (RGB) change use of PixelClip(x) to min(max(x, 0), 255).</li>
+  <li>Fixed SwapYtoUV yuy2 crash (StainlessS).</li>
+  <li>Fixed Overlay saturate UV in add and subtract mode.</li>
+  <li>Fixed Info.h range protect display characters (StainlessS).</li>
+  <li>Fixed AviSource packed planar import chroma offsets.</li>
+  <li>Fixed AviSource NULL GetWritePtr() failure due to premature setting of last_frame.</li>
+  <li>Fixed Mask rounding in greyscale calcs (Wilbert), minor refactor.</li>
+  <li>Fixed SelectRangeEvery audio snafu (Gavino).</li>
+  <li>Fixed LoadPlugin, SaveString of result string.</li>
+  <li>Fixed LoadPlugin, use _vsnprintf.</li>
+  <li>Fixed LoadVirtualdubPlugin, don't add vdub filter to chain on load failure.</li>
+  <li>Fixed rounding in RGB HResize (JoshyD) (affects all resizers)</li>
+  <li>Fixed error message name in the filter VerticalReduceBy2</li>
+  <li>Fixed SeparateFields() with variable parity input clip (Wilbert)</li>
+  <li>Fixed AviSource, cannot cast__int64* to long*, it does not work!</li>
+  <li>Fixed ConditionalReader: Don't allow out of range "Range" to overwrite edge values</li>
+  <li>Fixed MonoToStereo with stereo sources.</li>
+  <li>Fixed MergeChannels with only 1 input clip.</li>
+  <li>Fixed AviSource support for negative height DIB format AVI's.</li>
+  <li>Fixed Audio cache crashes.</li>
+  <li>Fixed ConditionalReader rounding with integer interpolation.</li>
+  <li>Fixed Softwire SSE2 bugs.</li>
+  <li>Fixed SSSE3, SSE4.1 &amp; SSE4.2 detection.</li>
+  <li>Fixed Fastwire encoding of instructions that are &gt;2 opcodes (SSSE3+4).</li>
+  <li>Fixed _RPT5() macro for debug builds</li>
+</ul>
+<ul>
+  <li>Cache auto increase span on sparse misses.</li>
+  <li>Cache prevent inactive instances returning VFB early and spoiling active instances hit rate (LaTo).</li>
+  <li>Overlay minor refactor YV12 -&gt; 444 chroma</li>
+  <li>Speedup ConvertToMono(), minor refactor MixAudio().</li>
+  <li>Change StackVertical/Horizontal to interative instead of recursive, 2^N
+      performace increase for 3 and more clips, i.e. 1 blit total instead of
+      blit(blit(blit(...</li>
+  <li>ConvertToYUY2 Add SSE2, MMX restore full speed on platforms with poor ooox.</li>
+  <li>ConvertAudio, manage tempbuffer and floatbuffer independantly.</li>
+  <li>ConvertAudio, prefer SSE2 over 3DNow for super AMD cores.</li>
+  <li>Info.h, full refactor, a good example of "Never look down", thx StainlessS</li>
+  <li>DoubleWeaveFrames, If A not writable, try to write to B, else make new frame</li>
+  <li>Histogram, fix GetFrame/NewVideoFrame call order</li>
+  <li>HResizer, interleave code +4% faster</li>
+  <li>YtoUV() Abuse Subframe to snatch the Y plane / UV planes.</li>
+  <li>ImageSource: Improve thread interlock code</li>
+  <li>ConditionalReader/WriteFile: Full refactor.</li>
+  <li>Replace _strdup with SaveString in AddFunction (Thanks Gavino)</li>
+  <li>SuperEQ: Improve channel unpacking/packing code.</li>
+  <li>H-Resize: Use SSE4.1 (movntdqa) loads for use once memory access.</li>
+  <li>H-Resize: Added SSE2 horizontal unpacker.</li>
+  <li>Resize: Use SSE3 (lddqu) loads for unaligned memory access.</li>
+  <li>Added ultra fast vertical PointResizer (64 pixel/cycle).</li>
+  <li>Added dynamic SSSE3 vertical resizer (16 pixel/cycle) ~ twice as fast as old MMX.</li>
+  <li>Added dynamic SSE2 vertical resizer (16 pixel/cycle).</li>
+  <li>Added dynamic MMX vertical resizer (8 pixel/cycle).</li>
+  <li>Added SSSE3 version for RGB&lt;-&gt;YV24 conversions.</li>
+  <li>Added dynamic compiled MMX/iSSE for RGB&lt;-&gt;YV24 conversions. Speed is
+    approx 200% of C-code.</li>
+</ul>
+<ul>
+  <li>New default directory, $PROGRAMFILES\AviSynth. But it will continue to
+    default to the previous intall dir and will use the previously existing plugin dir.<br>
+    Do a full unistall and answer YES to clearing the registry to reset to all the
+    new defaults.</li>
+  <li>Menu dir is now $SMPROGRAMS\AviSynth. Will rename "AviSynth 2.5" to "AviSynth".</li>
+  <li>Bump AVISYNTH_INTERFACE_VERSION to 6.</li>
+  <li>Changed recursive include protection #define from __AVISYNTH_H__ to __AVISYNTH_6_H__</li>
+  <li>Changed mem size elements from signed int to unsigned size_t.</li>
+  <li>Removed from avisynth.h AlignedPlanar, FillBorder, ConvertAudio. Now in separate include files.</li>
+  <li>Change CPUF_SSE4_2 to 0x1000 to match VirtualDub. 0x800 reserved for AVX.</li>
+  <li>Removed MIN_INT, MAX_INT.</li>
+  <li>LoadPlugin errs 0x7e and 0x7f have descriptive text.</li>
+  <li>Import: Increase full path buffer to MAX_PATH*4 for multi char code pages like CP932 (Chikuzen).</li>
+  <li>Throw error when output number of frames will exceed MAXINT.</li>
+  <li>BlankClip: Supply useful defaults for new Audio/Video when using a Video/Audio only template clip.</li>
+  <li>BlankClip: Use duration from Audio only template as default length for new clip.</li>
+  <li>Bob: Retain parity sense of input clip.</li>
+  <li>Define new IClip::SetCacheHints cachehint constants.</li>
+  <li>Force int call arguments to user script function float params to be explicit floats.</li>
+  <li>Splice pass CacheHints through to both children in + and ++ mode.</li>
+  <li>WriteFileStart/End save current_frame and set Last.</li>
+  <li>ConditionalReader do not ignore syntax errors in input file.</li>
+  <li>ImageSourceAnim Pad/Crop images to match first frame (Wilbert)</li>
+  <li>ImageSource Add version to messages (Wilbert)</li>
+  <li>Use Invoke for graph tail, enhance non-clip output error reporting.</li>
+  <li>PopContext when inner block Asserts/throws (maxxon).</li>
+  <li>Remove duplicate definitions (Wilbert).</li>
+  <li>Enhance non-clip output error reporting.</li>
+  <li>Explicitly specify calling sequence as __cdecl for Avisynth softwire
+      routines, (was the compiler default)</li>
+  <li>Use env-&gt;Invoke("Cache", ...) everywhere instead of
+      Cache::Create_Cache(), allows for Cache to be overloaded by a plugin.</li>
+  <li>ConvertToYUY2 Change from 0-1-1 kernel to 1-2-1 kernel.</li>
+  <li>Tweak make Interp same units as minSat and maxSat.</li>
+  <li>Check HKEY_CURRENT_USER for PluginDir first. (henktiggelaar)</li>
+  <li>Make forced, -ve, planar alignment of chroma planes match subsampling.</li>
+  <li>Enforce planar alignment restrictions.</li>
+  <li>Add error code to plugin load failure message</li>
+  <li>Make default planar AVI output packed. Control with OPT_AVIPadScanlines=True.</li>
+  <li>WriteFile() now supports unlimited number of unlimited strings. (was 16 by 254 byte strings).</li>
+  <li>ConvertToRGB*, make C++ code sample chroma the same as the MMX code i.e. use both pixels.</li>
+  <li>ConvertToRGB*, use YV24 path for planar, complain when options are present for YUY2.</li>
+  <li>ConvertToYUY2, use YV16 path for planar, complain when options are present for RGB
+    <ul>
+      <li>see: <a href="http://forum.doom9.org/showthread.php?p=1378381#post1378381"
+                  class="external free"
+                  rel="nofollow">http://forum.doom9.org/showthread.php?p=1378381#post1378381</a></li>
+    </ul>
+  </li>
+  <li>Thread safe code.</li>
+  <li>Passify compilation error/warnings (XhmikosR)</li>
+  <li>for, const, extern and ansi patches for VC2008 (SEt)</li>
+  <li>Disable OPT_RELS_LOGGING option</li>
+  <li>Change implicit Last parsing for argless, bracketless calls to match
+    bracketed cases. (Gavino)</li>
+  <li>DirectShowSource: Support last minute format renegotiation thru
+    IPin::QueryAccept() &amp; Validate the size of the provided directshow
+    buffer.</li>
+  <li>Remove non ascii chars from comments.</li>
+  <li>Add core stubs for DirectShowSource, TCPServer &amp; TCPSource, report when plugins are missing.</li>
+  <li>Add note for original source downloads - SoundTouch</li>
+  <li>Add more lineage history to Info()</li>
+  <li>Move convertaudio, alignplanar, fillborder &amp; MIN/MAX_INT definitions.</li>
+  <li>Run AtExit before dismantling world.</li>
+  <li>Change setcachehints definition from void to int. Tests IClip version &gt;= 5.</li>
+  <li>Move PixelClip definition to avisynth.cpp</li>
+  <li>SubTitle, etc, make X &amp; Y options float (0.125 pixel granularity).</li>
+  <li>ShowSMPTE() supports all integer FPS and multiplies of drop frame FPS.</li>
+  <li>SubTitle, stop overwriting string constants (Gavino).</li>
+  <li>SubTitle, improve pixel registration (Gavino).</li>
+  <li>Make Info() CPU display hierarchical.</li>
+  <li>SoftwireHelper: explicit hardware exception handling.</li>
+  <li>Resize: Moved GetResampleFunction into Resamplefuntion, to allow
+    overrides.</li>
+  <li>Resampler: Removed dead stlf code.</li>
+  <li>Put dynamic matrix conversion into separate file.</li>
+  <li>Moved chroma subsampling to image_type section.</li>
+  <li>Split up merge and plane Swappers.</li>
+  <li>Split up Plane transfers into separate classes.</li>
+  <li>Added automatic destination colorspace detection on planar YtoUV.</li>
+  <li>Took out greyscale and RGB32&lt;-&gt;RGB24 from convert.cpp and placed
+    them in separate files.</li>
+  <li>All code assuming UVwidth = Ywidth/2 and similar should be gone.</li>
+</ul>
+<p>A complete list can be found <a href="changelist26.htm">here</a>
+ and <a href="http://avisynth.nl/index.php/Changelist_25-26">there</a>.</p>
+<h3>Known problems and issues</h3>
+<ul>
+  <li>Possible other bugs which are reported
+  <a href="http://sourceforge.net/p/avisynth2/bugs/">sourceforge</a>.</li>
+</ul>
+<h3>Future plans</h3>
+<h4>AviSynth v2.61:</h4>
+<p>This version will use the free Microsoft compiler. It will be feature identical to 2.60
+i.e. Source new syntax changes only!</p>
+<h4>AviSynth v2.6n:</h4>
+<p>A bit further down the track as time and volunteers permit.</p>
+<ul>
+  <li>16bit and Float image bit depth.</li>
+  <li>Proper multithreading support.</li>
+  <li>Planar aRGB.</li>
+  <li>Official Win64 support.</li>
+  <li>ImageMagick support to import and export pictures (besides DevIL).</li>
+</ul>
+<p><kbd>$Date: 2015/03/31 02:59:44 $</kbd>
+</body>
+</html>
